@@ -1,0 +1,5 @@
+package com.dips.singleton;
+
+public class DbConnection {
+
+}

@@ -1,0 +1,7 @@
+package com.dips.pojo;
+
+public class AddressPojo {
+	private int addressId;
+	private int userId;
+	private String address;
+}

@@ -1,0 +1,5 @@
+package com.dips.service;
+
+public interface ServiceRegister {
+
+}

@@ -1,0 +1,32 @@
+
+
+<!-- Footer -->
+<footer class="page-footer font-small blue pt-4 fixed-bottom">
+
+	<!-- Copyright -->
+	<div class="footer-copyright text-center py-3">
+		© 2020 Copyright: <a href="index.jsp">
+			JSP Servlet Project</a>
+	</div>
+	<!-- Copyright -->
+</footer>
+<!-- Footer -->
+
+<div id="footer" class="text-center footer-copyright">
+	© 2020 Copyright: <a href="index.jsp">
+			JSP Servlet Project</a>
+</div>
+
+
+
+<!-- javascript -->
+<script src="script/jquery.js"></script>
+<!-- <script
+	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script> -->
+<script	src="script/bootstrap.min.js"></script>
+	
+<script src="script/validation.js"></script>
+<script src="script/fontawesome.min.js"></script>
+<script src="script/style.js"></script>
+</body>
+</html>

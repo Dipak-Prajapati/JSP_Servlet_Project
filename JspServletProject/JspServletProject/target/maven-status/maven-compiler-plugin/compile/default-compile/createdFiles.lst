@@ -1,0 +1,8 @@
+com\dips\service\ServiceRegisterImpl.class
+com\dips\dao\DaoRegisterImpl.class
+com\dips\pojo\AddressPojo.class
+com\dips\singleton\DbConnection.class
+com\dips\pojo\RegisterPojo.class
+com\dips\dao\DaoRegister.class
+com\dips\service\ServiceRegister.class
+com\dips\controller\InsertData.class

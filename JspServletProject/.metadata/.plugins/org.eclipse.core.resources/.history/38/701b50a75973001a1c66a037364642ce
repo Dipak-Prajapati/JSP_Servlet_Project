@@ -1,0 +1,39 @@
+package com.dips.dao;
+
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+import com.dips.pojo.RegisterPojo;
+import com.dips.singleton.DbConnection;
+import com.mysql.jdbc.PreparedStatement;
+
+public class DaoRegisterImpl implements DaoRegister{
+
+	Connection con;
+	ResultSet result;
+	PreparedStatement prstmt;
+	DbConnection dbInstance;
+	
+	public DaoRegisterImpl()
+	{
+		dbInstance = DbConnection.getInstance("jdbc:mysql://localhost:","3306","root","password");
+	}
+	
+	@Override
+	public void connect() {
+		// TODO Auto-generated method stub
+		try {
+			con=dbInstance.Connect("jspservlet");
+		} catch (ClassNotFoundException | SQLException e) {
+			System.out.println("\n Failed To Connnect DB " + e );
+		}
+	}
+
+	@Override
+	public boolean addUser(RegisterPojo registerPojo) {
+		// TODO Auto-generated method stub
+		return result;
+	}
+
+}

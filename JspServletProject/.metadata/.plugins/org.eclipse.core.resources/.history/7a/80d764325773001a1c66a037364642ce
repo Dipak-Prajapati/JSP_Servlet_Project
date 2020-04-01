@@ -1,0 +1,12 @@
+/**
+ * 
+ */
+package com.dips.dao;
+
+/**
+ * @author Dip'$
+ *
+ */
+public interface DaoRegister {
+	public void connect();
+}

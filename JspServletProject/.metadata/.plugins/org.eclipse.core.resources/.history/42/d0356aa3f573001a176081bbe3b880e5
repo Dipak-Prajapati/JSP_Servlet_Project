@@ -1,0 +1,16 @@
+/**
+ * 
+ */
+package com.dips.dao;
+
+import com.dips.pojo.RegisterPojo;
+
+/**
+ * @author Dip'$
+ *
+ */
+public interface DaoRegister {
+	public void connect();
+	
+	public int addUser(RegisterPojo registerPojo);
+}

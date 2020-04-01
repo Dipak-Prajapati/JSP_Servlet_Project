@@ -1,0 +1,12 @@
+/**
+ * 
+ */
+package com.dip.dao;
+
+/**
+ * @author Dip'$
+ *
+ */
+public interface DaoRegister {
+
+}

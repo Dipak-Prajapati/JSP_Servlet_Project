@@ -1,0 +1,71 @@
+package com.dips.dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+import com.dips.pojo.RegisterPojo;
+import com.dips.singleton.DbConnection;
+
+public class DaoRegisterImpl implements DaoRegister{
+
+	Connection con;
+	//ResultSet result;
+	PreparedStatement preparedStatement;
+	DbConnection dbInstance;
+	
+	public DaoRegisterImpl()
+	{
+		System.out.println("Hello Constructor from Dao");
+		dbInstance = DbConnection.getInstance("jdbc:mysql://localhost:","3306","root","password");
+	}
+	
+	@Override
+	public void connect() {
+		// TODO Auto-generated method stub
+		try {
+			con=dbInstance.Connect("jspservlet");
+			System.out.println("Database name passed");
+		} catch (ClassNotFoundException | SQLException e) {
+			System.out.println("\n Failed To Connnect DB " + e );
+		}
+	}
+
+	@Override
+	public boolean addUser(RegisterPojo registerPojo) {
+		// TODO Auto-generated method stub
+		boolean result = false;
+		System.out.println(registerPojo);
+		System.out.println("In DaoRegister Class addUser");
+		
+		try
+		{
+			
+			String query = "insert into user(user_id,firstname, middlename, lastname, email, dob, mobile_no, gender, language, hobbie, password) values(?,?,?,?,?,?,?,?,?,?,?)";
+			//preparedStatement = con.prepareStatement(query);
+			preparedStatement = con.prepareStatement(query);
+			preparedStatement.setInt(1, 1);
+			preparedStatement.setString(2, registerPojo.getFirstName());
+			preparedStatement.setString(3, registerPojo.getMiddleName());
+			preparedStatement.setString(4, registerPojo.getLastName());
+			preparedStatement.setString(5, registerPojo.getEmail());
+			preparedStatement.setString(6, registerPojo.getDob());
+			preparedStatement.setString(7, registerPojo.getMobile_no());
+			preparedStatement.setString(8, registerPojo.getGender());
+			preparedStatement.setString(9, registerPojo.getLanguage());
+			preparedStatement.setString(10, registerPojo.getHiobbie());
+			preparedStatement.setString(11, registerPojo.getPassword());
+			
+			System.out.println(registerPojo.getDob());
+			
+			result = preparedStatement.executeUpdate() > 0;
+		
+		}
+		catch(SQLException e)
+		{
+			System.out.println(e);
+		}
+		return result;
+	}
+
+}

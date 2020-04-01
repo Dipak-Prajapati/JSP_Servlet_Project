@@ -1,0 +1,35 @@
+@charset "ISO-8859-1";
+
+.navbar {
+	background: rgb(0, 0, 0, 0.3);
+	/* background-color : transparent; */
+}
+
+/* .navbar-brand span {
+	font-family: Damion;
+	font-size: 35px;
+	opacity: 1;
+	letter-spacing: 0;
+	color: white;
+} */
+
+.primary-background {
+	background : #2196f3;	
+}
+.btn-width
+{
+	width : 25%;
+}
+.banner-background
+{
+	/* clip-path: polygon(50% 0%, 100% 0, 100% 100%, 48% 83%, 0 100%, 0 0); */
+	/* clip-path: polygon(50% 0%, 100% 0, 100% 35%, 100% 100%, 80% 90%, 50% 100%, 20% 90%, 2% 100%, 0% 35%, 0 0); */
+	clip-path: polygon(50% 0%, 100% 0, 100% 75%, 50% 100%, 0% 75%, 0 0);
+}
+.login-height
+{
+	height : 80vh;
+}
+.login-bg
+{
+	background : #4db6ac;

@@ -1,0 +1,23 @@
+@charset "ISO-8859-1";
+
+.navbar {
+	background: rgb(0, 0, 0, 0.3);
+	/* background-color : transparent; */
+}
+
+/* .navbar-brand span {
+	font-family: Damion;
+	font-size: 35px;
+	opacity: 1;
+	letter-spacing: 0;
+	color: white;
+} */
+
+.primary-background {
+	background : #2196f3;	
+}
+.btn-width
+{
+	width : 25%;
+	margin-left : 5%;
+}

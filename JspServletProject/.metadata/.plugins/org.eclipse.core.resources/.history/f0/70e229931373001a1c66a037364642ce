@@ -1,0 +1,61 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Index Page</title>
+
+<!-- css -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+	
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+
+	<header>
+            <!-- Start Navigation Bar -->
+            <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+                <div class="container">
+                    <a class="navbar-brand" href="index.jsp"><img src="image/logo.png"></a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+<!--                     <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav fixed" id="menu-color">
+                            <li class="nav-item active mr-3 home-tag">
+                                <a class="nav-link" href="#Home">Home</a>
+                            </li>
+                            <li class="nav-item mr-3 service-tag">
+                                <a class="nav-link " href="#Services">Services</a>
+                            </li>
+                            <li class="nav-item mr-3 about-tag">
+                                <a class="nav-link" href="#About">About</a>
+                            </li>
+                            <li class="nav-item mr-3 work-tag">
+                                <a class="nav-link" href="#Work">Work</a>
+                            </li>
+                            <li class="nav-item mr-3 contact-tag">
+                                <a class="nav-link" href="#Contacts">Contacts</a>
+                            </li>
+                        </ul>
+                    </div> -->
+                </div>
+            </nav>
+
+            <!-- End Navigation Bar -->
+        </header>
+
+
+	<!-- javascript -->
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+	<script
+		src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+	<script src="script/style.js"></script>
+</body>
+</html>

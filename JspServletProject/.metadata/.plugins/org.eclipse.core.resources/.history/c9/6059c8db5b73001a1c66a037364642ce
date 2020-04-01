@@ -1,0 +1,64 @@
+package com.dips.dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+import com.dips.pojo.RegisterPojo;
+import com.dips.singleton.DbConnection;
+
+public class DaoRegisterImpl implements DaoRegister{
+
+	Connection con;
+	ResultSet result;
+	PreparedStatement preparedStatement;
+	DbConnection dbInstance;
+	
+	public DaoRegisterImpl()
+	{
+		dbInstance = DbConnection.getInstance("jdbc:mysql://localhost:","3306","root","password");
+	}
+	
+	@Override
+	public void connect() {
+		// TODO Auto-generated method stub
+		try {
+			con=dbInstance.Connect("jspservlet");
+		} catch (ClassNotFoundException | SQLException e) {
+			System.out.println("\n Failed To Connnect DB " + e );
+		}
+	}
+
+	@Override
+	public boolean addUser(RegisterPojo registerPojo) {
+		// TODO Auto-generated method stub
+		boolean result = false;
+		
+		try
+		{
+			preparedStatement = con.prepareStatement("insert into user(first_name,last_name,email,password,image,gender,language_known,phoneno,dob,role) values(?,?,?,?,?,?,?,?,?,?)");
+			preparedStatement.setString(1, registerPojo.getFirstName());
+			preparedStatement.setString(2, registerPojo.getLastName());
+			preparedStatement.setString(3, registerPojo.getEmail());
+			preparedStatement.setString(4, registerPojo.getPassword());
+			//preparedStatement.setString(5, registerPojo.getImage());
+			preparedStatement.setBlob  (5, registerPojo.getInputStream());
+			preparedStatement.setString(6, registerPojo.getGender());
+			preparedStatement.setString(7, registerPojo.getLanguageKnown());
+			preparedStatement.setString(8, registerPojo.getPhoneNo());
+			System.out.println(registerPojo.getDob());
+			preparedStatement.setString(9, registerPojo.getDob());
+			preparedStatement.setString(10, "user");
+			result = preparedStatement.executeUpdate() > 0;
+			int id=getKey();
+			registerPojo.setRegisterId(id);
+		}
+		catch(SQLException e)
+		{
+			System.out.println(e);
+		}
+		return result;
+	}
+
+}
