@@ -8,10 +8,12 @@
 <fullyQualifiedTypeName name="javax.servlet.http.HttpServlet"/>
 <fullyQualifiedTypeName name="java.io.IOException"/>
 <fullyQualifiedTypeName name="javax.servlet.ServletException"/>
-<fullyQualifiedTypeName name="com.dips.service.ServiceRegister"/>
 <fullyQualifiedTypeName name="java.sql.SQLException"/>
-<fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
-<fullyQualifiedTypeName name="com.dips.dao.DaoRegisterImpl"/>
 <fullyQualifiedTypeName name="com.dips.dao.DaoRegister"/>
 <fullyQualifiedTypeName name="com.dips.pojo.RegisterPojo"/>
+<fullyQualifiedTypeName name="com.dips.service.ServiceRegister"/>
+<fullyQualifiedTypeName name="com.dips.service.ServiceRegisterImpl"/>
+<fullyQualifiedTypeName name="javax.servlet.RequestDispatcher"/>
+<fullyQualifiedTypeName name="com.dips.dao.DaoRegisterImpl"/>
+<fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
 </qualifiedTypeNameHistroy>

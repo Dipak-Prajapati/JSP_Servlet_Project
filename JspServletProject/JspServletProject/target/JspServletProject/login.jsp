@@ -13,10 +13,10 @@
 							<p>Login Here</p>
 						</div>
 						<div class="card-body">
-							<form>
+							<form action="login" method="post">
 								<div class="form-group">
 									<label for="exampleInputEmail1">Email address</label> <input
-										type="email" class="form-control" id="exampleInputEmail1"
+										type="email" class="form-control" id="email" name="email"
 										aria-describedby="emailHelp" placeholder="Enter email">
 									<small id="emailHelp" class="form-text text-muted">We'll
 										never share your email with anyone else.</small>
@@ -24,7 +24,7 @@
 								<div class="form-group">
 									<label for="exampleInputPassword1">Password</label> <input
 										type="password" class="form-control"
-										id="exampleInputPassword1" placeholder="Password">
+										id="pwd" name="pwd" placeholder="Password">
 								</div>
 								
 								<button type="submit" class="btn btn-outline-light btn-lg login-btn-width login-bg">Login</button>

@@ -1,8 +1,8 @@
-com\dips\service\ServiceRegisterImpl.class
-com\dips\dao\DaoRegisterImpl.class
-com\dips\pojo\AddressPojo.class
+com\dips\controller\RegisterController.class
+com\dips\dao\UserDaoImpl.class
+com\dips\service\UserServiceImpl.class
 com\dips\singleton\DbConnection.class
-com\dips\pojo\RegisterPojo.class
-com\dips\dao\DaoRegister.class
-com\dips\service\ServiceRegister.class
-com\dips\controller\InsertData.class
+com\dips\pojo\UserModel.class
+com\dips\service\UserService.class
+com\dips\dao\UserDao.class
+com\dips\pojo\AddressModel.class
