@@ -2,13 +2,22 @@
 <!-- Navigation bar -->
 <%@ include file="header.jsp"%>
 
+<%@ page import="com.dips.pojo.UserModel" isELIgnored="false"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
+<c:if test="${sessionScope.currentUser == null}">
+	<c:redirect url="login.jsp"></c:redirect>
+</c:if>
+<c:set var="user" value="${sessionScope.currentUser}" />
+
+
 <main class="d-flex primary-background">
 	<div class="container">
 		<div class="row">
 			<div class="col-md-4 offset-md-3">
 				<div class="card reg-top">
 					<div class="card-header login-bg text-white text-center">
-						<br> <span class="fa fa-user-plus fa-3x"></span> <br> <br>
+						<br> <span class="fa fa-user-plus fa-3x"></span><br>
 						<p>Register Here</p>
 					</div>
 					<div class="card-body">
@@ -19,8 +28,8 @@
 
 							<div class="form-group">
 								<label for="fname">First Name : </label> <input type="text"
-									class="form-control" name="fname" id="fname"
-									placeholder="Dipak" onblur="inputfname()"
+									class="form-control" name="fname" id="fname" value="<c:out value="${user.firstName}"/>"
+									placeholder="<!-- Dipak -->" onblur="inputfname()"
 									onfocus="resetFirstName()"><br> <span
 									class="error" id="sfname"></span>
 							</div>

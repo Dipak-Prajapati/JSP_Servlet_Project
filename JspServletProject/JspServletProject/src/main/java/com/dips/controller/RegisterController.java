@@ -84,9 +84,10 @@ public class RegisterController extends HttpServlet {
 		System.out.println(hobbie);
 		System.out.println(password);
 
-		serviceRegister = new UserServiceImpl();
-		System.out.println("Controller in registerPojo : " + registerPojo);
-		serviceRegister.insertData(registerPojo);
-
+		/*
+		 * serviceRegister = new UserServiceImpl();
+		 * System.out.println("Controller in registerPojo : " + registerPojo);
+		 * serviceRegister.insertData(registerPojo);
+		 */
 	}
 }

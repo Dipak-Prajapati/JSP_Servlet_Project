@@ -1,6 +1,0 @@
-
-<%@ include file="header.jsp"%>
-<%@ page import="com.dips.pojo.UserModel" %>
-	
-
-<%@ include file="footer.jsp"%>
