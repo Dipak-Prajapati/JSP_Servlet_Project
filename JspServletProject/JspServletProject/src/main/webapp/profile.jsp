@@ -72,7 +72,9 @@ css
 							<div class="image_outer_container">
 								<div class="green_icon"></div>
 								<div class="image_inner_container">
-									<img src="image/PicsArt_12-04-06.28.42.jpg" class="img-fluid">
+									<img src="image/${user.image}" class="img-fluid">
+																
+									
 									<!-- https://bootsnipp.com/snippets/gN2b5 -->
 								</div>
 							</div>
@@ -131,7 +133,7 @@ css
 						<a class="btn btn-outline-light btn-lg login-bg"
 							href="LogoutController"><span class="fa fa-sign-out"></span>Logout</a>
 						<a class="btn btn-outline-light btn-lg login-bg"
-							href="registration.jsp"><span class="fa fa-sign-out"></span>Edit</a>
+							href="registration.jsp?id=${user.id}"><span class="fa fa-sign-out"></span>Edit</a>
 					</div>
 				</div>
 			</div>

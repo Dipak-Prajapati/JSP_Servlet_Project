@@ -25,4 +25,11 @@ public class UserServiceImpl implements UserService {
 		return status;
 	}
 
+	@Override
+	public boolean updateData(UserModel updatePojo) {
+		// TODO Auto-generated method stub
+		boolean status = daoRegister.updateData(updatePojo);
+		return status;
+	}
+
 }

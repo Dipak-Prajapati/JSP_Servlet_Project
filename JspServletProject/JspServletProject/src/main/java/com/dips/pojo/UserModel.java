@@ -2,7 +2,7 @@ package com.dips.pojo;
 
 public class UserModel {
 
-	// private int id;
+	private int id;
 	private String firstName;
 	private String middleName;
 	private String lastName;
@@ -14,12 +14,26 @@ public class UserModel {
 	private String hiobbie;
 	private String password;
 	private String image;
+	private String base64Image;
 
 	// getter and setter
 
-	/*
-	 * public int getId() { return id; } public void setId(int id) { this.id = id; }
-	 */
+	public String getBase64Image() {
+		return base64Image;
+	}
+
+	public void setBase64Image(String base64Image) {
+		this.base64Image = base64Image;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
 	public String getFirstName() {
 		return firstName;
 	}
@@ -115,7 +129,5 @@ public class UserModel {
 				+ ", language=" + language + ", hiobbie=" + hiobbie + ", password=" + password + ", image=" + image
 				+ "]";
 	}
-
-	
 
 }

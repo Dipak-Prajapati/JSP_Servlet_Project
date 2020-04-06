@@ -16,4 +16,6 @@ public interface UserDao {
 	public boolean addUser(UserModel registerPojo);
 	
 	public UserModel login(String email , String password);
+	
+	public boolean updateData(UserModel updatePojo);
 }

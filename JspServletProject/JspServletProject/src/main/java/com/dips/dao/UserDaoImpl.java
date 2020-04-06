@@ -91,7 +91,8 @@ public class UserDaoImpl implements UserDao {
 
 			if (result.next()) {
 				userModel = new UserModel();
-
+				
+				userModel.setId(result.getInt("user_id"));
 				userModel.setFirstName(result.getString("firstname"));
 				userModel.setMiddleName(result.getString("middlename"));
 				userModel.setLastName(result.getString("lastname"));
@@ -107,6 +108,7 @@ public class UserDaoImpl implements UserDao {
 				userModel.setLanguage(result.getString("language"));
 				userModel.setHiobbie(result.getString("hobbie"));
 				userModel.setPassword(result.getString("password"));
+				userModel.setImage(result.getString("profile_pic"));
 				// profile_pic
 			}
 
@@ -115,6 +117,42 @@ public class UserDaoImpl implements UserDao {
 		}
 
 		return userModel;
+	}
+
+	@Override
+	public boolean updateData(UserModel updatePojo) {
+		// TODO Auto-generated method stub
+		boolean result = false;
+		System.out.println("updatePojo"+updatePojo);
+		System.out.println("In DaoRegister Class in updateData()");
+
+		try {
+
+			System.out.println(updatePojo.getDob());
+			String query = "update user set firstname=?, middlename=?, lastname=?, email=?, dob=?, mobile_no=?, gender=?, language=?, hobbie=?, password=?, profile_pic=? where user_id=?";
+			//String query = "insert into user(firstname, middlename, lastname, email, dob, mobile_no, gender, language, hobbie, password,profile_pic) values(?,?,?,?,?,?,?,?,?,?,?)";
+			ps = con.prepareStatement(query); // preparedStatement =
+			con.prepareStatement(query);
+			ps.setString(1, updatePojo.getFirstName());
+			ps.setString(2, updatePojo.getMiddleName());
+			ps.setString(3, updatePojo.getLastName());
+			ps.setString(4, updatePojo.getEmail());
+			ps.setString(5, updatePojo.getDob());
+			ps.setString(6, updatePojo.getMobile_no());
+			ps.setString(7, updatePojo.getGender());
+			ps.setString(8, updatePojo.getLanguage());
+			ps.setString(9, updatePojo.getHiobbie());
+			ps.setString(10, updatePojo.getPassword());
+			ps.setString(11, updatePojo.getImage());
+			ps.setInt(12,updatePojo.getId());
+			result = ps.executeUpdate() > 0;
+
+		} catch (SQLException e) {
+			System.out.println(e);
+		}
+
+		return result;
+
 	}
 
 }

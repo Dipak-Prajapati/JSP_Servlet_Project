@@ -20,7 +20,7 @@
 <script src="script/fontawesome.min.js"></script>
 <script src="script/style.js"></script>
 <!-- <script src="script/materialize.min.js"></script> -->
-<script>
+<!-- <script>
 	$(document).ready(function() {
 		//alert("helllooo")
 
@@ -45,12 +45,12 @@
 					console.log("Error...");
 				} 
 				//processData : false,
-				contentType : false,
+				//contentType : false,
 			})
 		})
 	})
 </script>
-
+ -->
 
 </body>
 </html>

@@ -7,4 +7,6 @@ public interface UserService {
 	public boolean insertData(UserModel registerPojo);
 	
 	public UserModel login(String email , String password);
+
+	public boolean updateData(UserModel updatePojo);
 }
