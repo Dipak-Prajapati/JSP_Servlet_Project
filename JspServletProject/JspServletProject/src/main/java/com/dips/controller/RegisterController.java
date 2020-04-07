@@ -28,6 +28,7 @@ public class RegisterController extends HttpServlet {
 	UserModel registerPojo;
 	UserService serviceRegister;
 
+	@SuppressWarnings("deprecation")
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
 
 		HttpSession session = request.getSession(true);
@@ -45,41 +46,33 @@ public class RegisterController extends HttpServlet {
 			request.getParameter("address");
 			String password = request.getParameter("pwd");
 
-			/*
-			 * InputStream inputStream = null; // input stream of the upload file
-			 * 
-			 * // obtains the upload file part in this multipart request Part filePart =
-			 * request.getPart("pic"); if (filePart != null) { // prints out some
-			 * information for debugging System.out.println(filePart.getName());
-			 * System.out.println(filePart.getSize());
-			 * System.out.println(filePart.getContentType());
-			 * 
-			 * // obtains input stream of the upload file inputStream =
-			 * filePart.getInputStream(); }
-			 */
-			
-			  Part part = request.getPart("pic"); String imageName =
-			  part.getSubmittedFileName(); System.out.println("imageName :" + imageName);
-			  
-			  InputStream is = part.getInputStream();
-			  System.out.println("image InputStream :" + is); byte[] data = new
-			  byte[is.available()]; is.read(data); System.out.println("image data:" +
-			  data);
-			  
-			  
-			  String path =
-			  "D:\\INEXTURE\\JspServletProject\\JspServletProject\\src\\main\\webapp\\image"
-			  + File.separator + imageName;
-			  
-			  String path1 = request.getRealPath("/") + "image" + File.separator +
-			  imageName; // System.out.println("image Path :" + path);
-			  
-			  FileOutputStream fos = new FileOutputStream(path);
-			  
-			  fos.write(data); fos.close();
-			  
-			  fos = new FileOutputStream(path1); fos.write(data); fos.close();
-			 
+			Part part = request.getPart("pic");
+			String imageName = part.getSubmittedFileName();
+			System.out.println("imageName :" + imageName);
+
+			InputStream is = part.getInputStream();
+			System.out.println("image InputStream :" + is);
+			byte[] data = new byte[is.available()];
+			is.read(data);
+			System.out.println("image data:" + data);
+
+			String path = "D:\\INEXTURE\\JspServletProject\\JspServletProject\\src\\main\\webapp\\image"
+					+ File.separator + imageName;
+
+			// String path = "D:\\Upload Image" + File.separator + imageName;
+			String path1 = request.getRealPath("/") + "image" + File.separator + imageName;
+			System.out.println("imagePath :" + path);
+			System.out.println("Get Real Path imagePath :" + path1);
+
+			FileOutputStream fos = new FileOutputStream(path1);
+
+			fos.write(data);
+			fos.close();
+
+			fos = new FileOutputStream(path);
+			fos.write(data);
+			fos.close();
+
 			registerPojo = new UserModel();
 
 			registerPojo.setFirstName(fname);
@@ -92,7 +85,7 @@ public class RegisterController extends HttpServlet {
 			registerPojo.setLanguage(language);
 			registerPojo.setHiobbie(hobbie);
 			registerPojo.setPassword(password);
-			//registerPojo.setImage(imageName);
+			registerPojo.setImage(imageName);
 
 			System.out.println("In Controller");
 			System.out.println(fname);
@@ -110,6 +103,7 @@ public class RegisterController extends HttpServlet {
 			System.out.println("Controller in registerPojo : " + registerPojo);
 			serviceRegister.insertData(registerPojo);
 
+			response.sendRedirect("index.jsp");
 		}
 		if (session.getAttribute("currentUser") != null) {
 
@@ -130,21 +124,29 @@ public class RegisterController extends HttpServlet {
 			String imageName = part.getSubmittedFileName();
 			System.out.println("imageName :" + imageName);
 
-			/*
-			 * InputStream is = part.getInputStream();
-			 * System.out.println("image InputStream :" + is); byte[] data = new
-			 * byte[is.available()]; is.read(data); System.out.println("image data:" +
-			 * data);
-			 * 
-			 * String path =
-			 * "D:\\INEXTURE\\JspServletProject\\JspServletProject\\src\\main\\webapp\\image"
-			 * + File.separator + imageName; // String path =
-			 * request.getRealPath("/")+"image"+File.separator + imageName;
-			 * System.out.println("image Path :" + path);
-			 * 
-			 * FileOutputStream fos = new FileOutputStream(path); fos.write(data);
-			 * fos.close();
-			 */
+			InputStream is = part.getInputStream();
+			System.out.println("image InputStream :" + is);
+			byte[] data = new byte[is.available()];
+			is.read(data);
+			System.out.println("image data:" + data);
+
+			String path = "D:\\INEXTURE\\JspServletProject\\JspServletProject\\src\\main\\webapp\\image"
+					+ File.separator + imageName;
+
+			// String path = "D:\\Upload Image" + File.separator + imageName;
+			String path1 = request.getRealPath("/") + "image" + File.separator + imageName;
+			System.out.println("imagePath :" + path);
+			System.out.println("Get Real Path imagePath :" + path1);
+
+			FileOutputStream fos = new FileOutputStream(path1);
+
+			fos.write(data);
+			fos.close();
+
+			fos = new FileOutputStream(path);
+			fos.write(data);
+			fos.close();
+
 			registerPojo = (UserModel) session.getAttribute("currentUser");
 			// registerPojo = new UserModel();
 
@@ -175,6 +177,8 @@ public class RegisterController extends HttpServlet {
 			serviceRegister = new UserServiceImpl();
 			System.out.println("Controller in registerPojo update code: " + registerPojo);
 			serviceRegister.updateData(registerPojo);
+			
+			response.sendRedirect("profile.jsp");
 
 		}
 

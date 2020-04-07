@@ -4,6 +4,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 
+
 <!-- <!DOCTYPE html>
 <html>
 <head>
@@ -57,6 +58,13 @@ css
 
 <%@ include file="header.jsp"%>
 
+<%
+	//response.setHeader("Cache-Control", "no-cache");
+	response.setHeader("Cache-Control", "no-store");
+	response.setHeader("Pragma", "no-cache");
+	response.setDateHeader("Expires", 0);
+%>
+
 <main class="d-flex primary-background">
 	<div class="container">
 		<div class="row">
@@ -73,8 +81,8 @@ css
 								<div class="green_icon"></div>
 								<div class="image_inner_container">
 									<img src="image/${user.image}" class="img-fluid">
-																
-									
+
+
 									<!-- https://bootsnipp.com/snippets/gN2b5 -->
 								</div>
 							</div>
@@ -133,7 +141,8 @@ css
 						<a class="btn btn-outline-light btn-lg login-bg"
 							href="LogoutController"><span class="fa fa-sign-out"></span>Logout</a>
 						<a class="btn btn-outline-light btn-lg login-bg"
-							href="registration.jsp?id=${user.id}"><span class="fa fa-sign-out"></span>Edit</a>
+							href="registration.jsp?id=${user.id}"><span
+							class="fa fa-sign-out"></span>Edit</a>
 					</div>
 				</div>
 			</div>

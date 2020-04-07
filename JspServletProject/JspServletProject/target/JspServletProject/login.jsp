@@ -3,6 +3,15 @@
 <%@ include file="header.jsp"%>
 <%@ page import="com.dips.pojo.Message" isELIgnored="false"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%
+	//response.setHeader("Cache-Control", "no-cache");
+	response.setHeader("Cache-Control", "no-store");
+	response.setHeader("Pragma", "no-cache");
+	response.setDateHeader("Expires", 0);
+	
+	if(session.getAttribute("currentUser")!=null)
+	    response.sendRedirect("profile.jsp");
+%>
 
 <main
 	class="d-flex align-items-center login-height primary-background banner-background">
@@ -18,13 +27,13 @@
 					<!-- validate session -->
 					<c:if test="${sessionScope.Msg != null}">
 						<%-- <c:redirect url="login.jsp"></c:redirect> --%>
-						<c:set var="msg" value="${sessionScope.Msg}" scope="session"/>
+						<c:set var="msg" value="${sessionScope.Msg}" scope="session" />
 						<div class="alert ${msg.cssClass} mb-0 " role="alert">
-							<strong><c:out value="${msg.content}"/></strong>
+							<strong><c:out value="${msg.content}" /></strong>
 						</div>
-						<c:remove var="msg" scope="session" />	 
+						<c:remove var="msg" scope="session" />
 					</c:if>
-					
+
 					<div class="card-body">
 						<form action="login" method="post">
 							<div class="form-group">
