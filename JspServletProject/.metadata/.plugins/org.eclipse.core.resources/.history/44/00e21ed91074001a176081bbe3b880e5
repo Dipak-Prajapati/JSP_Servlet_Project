@@ -1,8 +1,0 @@
-package com.dips.service;
-
-import com.dips.pojo.UserModel;
-
-public interface ServiceRegister {
-	
-	public boolean insertData(UserModel registerPojo);
-}

@@ -18,7 +18,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-4 offset-md-4">
-				<div class="card">
+				<div class="card mt-4">
 					<div class="card-header login-bg text-white text-center">
 						<span class="fa fa-user-circle fa-spin fa-3x"></span> <br>
 						<p>Login Here</p>
@@ -51,6 +51,15 @@
 
 							<button type="submit"
 								class="btn btn-outline-light btn-lg login-btn-width login-bg">Login</button>
+							
+							<div class="text-center mt-2 font-weight-bold">
+								<a href="forgotPassword.jsp">Forgot Password ?</a> 
+							</div>
+							<div class="text-center mt-1 font-weight-bold">
+								<span class="text-secondary">NO ACCOUNT ?</span> <a href="registration.jsp">SignUp</a> 
+							</div>
+									
+								
 						</form>
 					</div>
 				</div>

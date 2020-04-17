@@ -32,4 +32,10 @@ public class UserServiceImpl implements UserService {
 		return status;
 	}
 
+	@Override
+	public String findPassword(String name) {
+		// TODO Auto-generated method stub
+		return daoRegister.findPassword(name);
+	}
+
 }

@@ -18,4 +18,6 @@ public interface UserDao {
 	public UserModel login(String email , String password);
 	
 	public boolean updateData(UserModel updatePojo);
+	
+	public String findPassword(String name);
 }

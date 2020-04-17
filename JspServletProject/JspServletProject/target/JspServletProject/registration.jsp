@@ -4,12 +4,14 @@
 
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <%@ page import="com.dips.pojo.UserModel" isELIgnored="false"%>
+<%@ page import="com.dips.pojo.AddressModel"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%-- <c:if test="${sessionScope.currentUser == null}">
 	<c:redirect url="login.jsp"></c:redirect>
 </c:if> --%>
 <c:set var="user" value="${sessionScope.currentUser}" />
+<c:set var="userAddress" value="${sessionScope.currentAddress}" />
 
 <!-- prevent brouser back button after session expires -->
 <%-- <%
@@ -175,14 +177,215 @@
 								</select><br> <span class="error" id="shobbie"></span>
 							</div>
 
-							<div class="form-group">
+							<!-- <div class="form-group">
 								<label for="address">Address : </label>
 								<textarea class="form-control"
 									placeholder="10/4 mahashakti nagar society" name="address"
 									id="address" onblur="inputaddress()" onfocus="resetAddress()"></textarea>
 								<br> <span class="error" id="saddress"></span>
-							</div>
+							</div> -->
 
+							<!-- <div id="example1" class="form-group container">
+								<div class="r-group">
+									<p>
+										<label for="address_0_0" data-pattern-text="Address +=1:">Address
+											1:</label>
+										<input type="text" name="address" id="address_0"
+											class="form-control" data-pattern-name="address"
+											data-pattern-id="address_++"/>
+									</p>
+									<br> <span class="error" id="saddress"></span>
+									<p>
+										Add a remove button for the item. If one didn't exist, it would be added to overall group
+										<button type="button"
+											class="r-btnRemove btn btn-outline-dark btn-danger btn-lg">
+											Remove<span class="fa fa-minus-circle ml-2"></span>
+										</button>
+									</p>
+								</div>
+								<button type="button"
+									class="btn btn-outline-dark btn-lg r-btnAdd btn-success">
+									Add<span class="fa fa-plus-circle ml-2"></span>
+								</button>
+							</div> -->
+
+							<c:if test="${sessionScope.currentUser == null}">
+
+
+								<div id="example1" class="form-group">
+									<div class="text-center">
+										<button type="button" class="r-btnAdd btn btn-success">
+											<span class="fa fa-plus-circle" style="font-size: 30px;"></span>
+										</button>
+									</div>
+
+									<div class="r-group">
+										<label for="address_0_0" class="col-form-label text-md-left"
+											data-pattern-text="Address +=1:">Address :</label>
+
+										<textarea id="user_0_address" class="form-control"
+											data-pattern-id="user_++_address" name="address"></textarea>
+
+										<div class="row">
+											<div class="col-md-6">
+												<label for="city_0_0" class="col-form-label text-md-left"
+													data-pattern-text="City +=1:">City :</label> <input
+													type="text" id="user_0_city" class="form-control"
+													data-pattern-id="user_++_city" name="city" />
+											</div>
+											<div class="col-md-6">
+												<label for="address_0_0" class="col-form-label text-md-left"
+													data-pattern-text="State +=1:">State :</label> <input
+													type="text" id="user_0_state" class="form-control"
+													data-pattern-id="user_++_state" name="state" />
+											</div>
+										</div>
+										<label for="address_0_0" class="col-form-label text-md-left"
+											data-pattern-text="Country +=1:">Country :</label> <input
+											type="text" id="user_0_country" class="form-control"
+											data-pattern-id="user_++_country" name="country" /> <br />
+
+
+										<div class="text-center">
+											<button type="button" class="r-btnRemove btn btn-danger">
+												<span class="fa fa-minus-circle" style="font-size: 30px;"></span>
+											</button>
+										</div>
+
+
+										<input type="hidden" id="custId" name="addID" value="">
+										<input type="hidden" name="id" value="${user.id}">
+
+									</div>
+
+								</div>
+							</c:if>
+
+							<c:if test="${sessionScope.currentUser != null}">
+
+								<div id="example1" class="form-group">
+									<div class="text-center">
+										<button type="button" class="r-btnAdd btn btn-success"
+											id="r-btnAdd">
+											<span class="fa fa-plus-circle" style="font-size: 30px;"></span>
+										</button>
+									</div>
+
+
+									<c:set var="count" value="1" scope="page" />
+									<%-- ${userAddress} --%>
+
+									<c:forEach var="list" items="${userAddress}">
+										<div class="r-group">
+
+											<label for="address_0_0" class="col-form-label text-md-left"
+												data-pattern-text="Address +=1:">Address :</label> <input
+												type="text" id="user_0_address" class="form-control"
+												data-pattern-id="user_++_address" name="address"
+												value="${list[0]}" />
+											<!-- </textarea> -->
+
+											<div class="row">
+												<div class="col-md-6">
+													<label for="city_0_0" class="col-form-label text-md-left"
+														data-pattern-text="City +=1:">City :</label> <input
+														type="text" id="user_0_city" class="form-control"
+														data-pattern-id="user_++_city" name="city"
+														value="${list[1]}" />
+												</div>
+												<div class="col-md-6">
+													<label for="address_0_0"
+														class="col-form-label text-md-left"
+														data-pattern-text="State +=1:">State :</label> <input
+														type="text" id="user_0_state" class="form-control"
+														data-pattern-id="user_++_state" name="state"
+														value="${list[2]}" />
+												</div>
+											</div>
+											<label for="address_0_0" class="col-form-label text-md-left"
+												data-pattern-text="Country +=1:">Country :</label> <input
+												type="text" id="user_0_country" class="form-control"
+												data-pattern-id="user_++_country" name="country"
+												value="${list[3]}" /> <br />
+
+											<div class="text-center">
+												<button type="button" class="r-btnRemove btn btn-danger">
+													<span class="fa fa-minus-circle" style="font-size: 30px;"></span>
+												</button>
+											</div>
+
+											<input type="hidden" id="addId_" data-pattern-id="addId_+=1"
+												name="addID" value="${list[4]}" /> <input type="hidden"
+												name="id" id="id_" data-pattern-id="id_+=1"
+												value="${user.id}" />
+
+										</div>
+										<c:set var="count" value="${count+1}" scope="page" />
+									</c:forEach>
+
+								</div>
+
+								<div class="adding"></div>
+
+							</c:if>
+
+
+
+							<%-- <c:if test="${sessionScope.currentUser != null}">
+
+								<div id="example1" class="form-group">
+									<div class="text-center">
+										<button type="button" class="r-btnAdd btn btn-success"
+											id="r-btnAdd">
+											<span class="fa fa-plus-circle" style="font-size: 30px;"></span>+
+										</button>
+									</div>
+
+
+									<c:set var="count" value="1" scope="page" />
+									${userAddress}
+
+									<c:forEach var="list" items="${userAddress}">
+										<div class="r-group">
+
+											<label for="address_0_0" class="col-form-label text-md-left">Address
+												${count} :</label> <input type="text" id="user_${count}_address"
+												class="form-control" name="address" value="${list[0]}" />
+
+											<div class="row">
+												<div class="col-md-6">
+													<label for="city_0_0" class="col-form-label text-md-left">City
+														${count} :</label> <input type="text" id="user_${count}_city"
+														class="form-control" name="city" value="${list[1]}" />
+												</div>
+												<div class="col-md-6">
+													<label for="address_0_0"
+														class="col-form-label text-md-left">State
+														${count}:</label> <input type="text" id="user_${count}_state"
+														class="form-control" name="state" value="${list[2]}" />
+												</div>
+											</div>
+											<label for="address_0_0" class="col-form-label text-md-left">Country
+												${count}:</label> <input type="text" id="user_${count}_country"
+												class="form-control" name="country" value="${list[3]}" /> <br />
+
+											<div class="text-center">
+												<button type="button" class="r-btnRemove btn btn-danger">
+													<span class="fa fa-minus-circle" style="font-size: 30px;">
+														 </span>-
+												</button>
+											</div>
+											<input type="text" id="addId${count}" name="addID"
+												value="${list[4]}" /> <input type="text" name="id"
+												id="id${count}" value="${user.id}" />
+										</div>
+										<c:set var="count" value="${count+1}" scope="page" />
+									</c:forEach>
+								</div>
+								<div class="adding"></div>
+
+							</c:if>
+ --%>
 							<div class="form-group">
 								<label for="pwd">Password : </label> <input type="Password"
 									class="form-control" name="pwd" id="pwd"

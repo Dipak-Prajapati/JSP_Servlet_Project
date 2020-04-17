@@ -91,7 +91,7 @@ public class UserDaoImpl implements UserDao {
 
 			if (result.next()) {
 				userModel = new UserModel();
-				
+
 				userModel.setId(result.getInt("user_id"));
 				userModel.setFirstName(result.getString("firstname"));
 				userModel.setMiddleName(result.getString("middlename"));
@@ -99,7 +99,7 @@ public class UserDaoImpl implements UserDao {
 
 				userModel.setEmail(result.getString("email"));
 				Date date = result.getDate("dob");
-				//Date date = Calendar.getInstance().getTime();
+				// Date date = Calendar.getInstance().getTime();
 				DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
 				String strDate = dateFormat.format(date);
 				userModel.setDob(strDate);
@@ -123,16 +123,19 @@ public class UserDaoImpl implements UserDao {
 	public boolean updateData(UserModel updatePojo) {
 		// TODO Auto-generated method stub
 		boolean result = false;
-		System.out.println("updatePojo"+updatePojo);
+		System.out.println("updatePojo" + updatePojo);
 		System.out.println("In DaoRegister Class in updateData()");
 
 		try {
 
 			System.out.println(updatePojo.getDob());
 			String query = "update user set firstname=?, middlename=?, lastname=?, email=?, dob=?, mobile_no=?, gender=?, language=?, hobbie=?, password=?, profile_pic=? where user_id=?";
-			//String query = "insert into user(firstname, middlename, lastname, email, dob, mobile_no, gender, language, hobbie, password,profile_pic) values(?,?,?,?,?,?,?,?,?,?,?)";
-			ps = con.prepareStatement(query); // preparedStatement =
-			con.prepareStatement(query);
+			// String query = "insert into user(firstname, middlename, lastname, email, dob,
+			// mobile_no, gender, language, hobbie, password,profile_pic)
+			// values(?,?,?,?,?,?,?,?,?,?,?)";
+			// preparedStatement = con.prepareStatement(query);
+			ps = con.prepareStatement(query);
+			System.out.println("Update ps" + ps);
 			ps.setString(1, updatePojo.getFirstName());
 			ps.setString(2, updatePojo.getMiddleName());
 			ps.setString(3, updatePojo.getLastName());
@@ -144,7 +147,8 @@ public class UserDaoImpl implements UserDao {
 			ps.setString(9, updatePojo.getHiobbie());
 			ps.setString(10, updatePojo.getPassword());
 			ps.setString(11, updatePojo.getImage());
-			ps.setInt(12,updatePojo.getId());
+			ps.setInt(12, updatePojo.getId());
+			System.out.println("Update id" + updatePojo.getId());
 			result = ps.executeUpdate() > 0;
 
 		} catch (SQLException e) {
@@ -153,6 +157,28 @@ public class UserDaoImpl implements UserDao {
 
 		return result;
 
+	}
+
+	@Override
+	public String findPassword(String name) {
+		// TODO Auto-generated method stub
+		String query = "select password from user where email=?";
+
+		try {
+			ps = con.prepareStatement(query);
+			ps.setString(1, name);
+
+			ResultSet rs = ps.executeQuery();
+
+			if (rs.next()) {
+				String password = rs.getString("password");
+				return password;
+			}
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return null;
 	}
 
 }

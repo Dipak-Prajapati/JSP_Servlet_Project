@@ -1,68 +1,23 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@ page import="com.dips.pojo.UserModel" isELIgnored="false"%>
+<%@ page import="com.dips.pojo.AddressModel"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
-
-
-<!-- <!DOCTYPE html>
-<html>
-<head>
-<meta charset="ISO-8859-1">
-<title>Index Page</title>
-
-css
-<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="css/fontawesome.min.css">
-<link rel="stylesheet"
-	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" type="text/css" href="css/style.css">
-<link rel="stylesheet" type="text/css" href="css/materialize.min.css">
-</head>
-
-<body> -->
 <!-- validate session -->
 <c:if test="${sessionScope.currentUser == null}">
 	<c:redirect url="login.jsp"></c:redirect>
 </c:if>
 <c:set var="user" value="${sessionScope.currentUser}" />
-<%-- 	<header>
-		<!-- Start Navigation Bar -->
-		<nav class="navbar navbar-expand-lg navbar-light fixed-top">
-			<div class="container">
-				<a class="navbar-brand" href="index.jsp"><img
-					src="image/logo.png"></a>
-				<button class="navbar-toggler" type="button" data-toggle="collapse"
-					data-target="#navbarSupportedContent"
-					aria-controls="navbarSupportedContent" aria-expanded="false"
-					aria-label="Toggle navigation">
-					<span class="navbar-toggler-icon"></span>
-				</button>
-
-				<div class="collapse navbar-collapse" id="navbarSupportedContent">
-					<ul class="navbar-nav mr-right float-right">
-						<li class="nav-item btn btn-outline-light mr-2"><span
-							class="fa fa-user-circle"></span> <c:out
-								value="${user.firstName}"></c:out></li>
-
-						<li class="nav-item"><a
-							class="nav-link btn btn-outline-light login-bg"
-							href="LogoutController"><span class="fa fa-sign-out"></span>Logout</a></li>
-					</ul>
-				</div>
-			</div>
-		</nav>
-
-		<!-- End Navigation Bar -->
-	</header> --%>
+<c:set var="userAddress" value="${sessionScope.currentAddress}" />
 
 <%@ include file="header.jsp"%>
 
 <%
 	//response.setHeader("Cache-Control", "no-cache");
-	response.setHeader("Cache-Control", "no-store");
-	response.setHeader("Pragma", "no-cache");
-	response.setDateHeader("Expires", 0);
+response.setHeader("Cache-Control", "no-store");
+response.setHeader("Pragma", "no-cache");
+response.setDateHeader("Expires", 0);
 %>
 
 <main class="d-flex primary-background">
@@ -117,14 +72,14 @@ css
 									<td><c:out value="${user.dob}"></c:out></td>
 								</tr>
 								<tr>
+									<th>Mobile Number</th>
+									<th>:</th>
+									<td><c:out value="${user.mobile_no}"></c:out></td>
+								</tr>
+								<tr>
 									<th>Gender</th>
 									<th>:</th>
 									<td><c:out value="${user.gender}"></c:out></td>
-								</tr>
-								<tr>
-									<th>Hobby</th>
-									<th>:</th>
-									<td><c:out value="${user.hiobbie}"></c:out></td>
 								</tr>
 								<tr>
 									<th>Language</th>
@@ -132,10 +87,40 @@ css
 									<td><c:out value="${user.language}"></c:out></td>
 								</tr>
 								<tr>
-									<th>Mobile Number</th>
+									<th>Hobby</th>
 									<th>:</th>
-									<td><c:out value="${user.mobile_no}"></c:out></td>
+									<td><c:out value="${user.hiobbie}"></c:out></td>
 								</tr>
+
+								<!-- Address -->
+								<c:set var="count" value="1" scope="page" />
+								<c:forEach var="list" items="${userAddress}">
+									<tr>
+										<th>Address ${count}</th>
+										<th>:</th>
+										<td><c:out value="${list[0]}"></c:out></td>
+									</tr>
+									<tr>
+										<th>City ${count}</th>
+										<th>:</th>
+										<td><c:out value="${list[1]}"></c:out></td>
+									</tr>
+									<tr>
+										<th>State ${count}</th>
+										<th>:</th>
+										<td><c:out value="${list[2]}"></c:out></td>
+									</tr>
+									<tr>
+										<th>Country ${count}</th>
+										<th>:</th>
+										<td><c:out value="${list[3]}"></c:out></td>
+									</tr>
+									<input type="hidden" id="custId" name="addID"
+										value="${list[4]}">
+									<input type="hidden" name="id" value="${user.id}">
+
+									<c:set var="count" value="${count+1}" scope="page" />
+								</c:forEach>
 							</tbody>
 						</table>
 						<a class="btn btn-outline-light btn-lg login-bg"
