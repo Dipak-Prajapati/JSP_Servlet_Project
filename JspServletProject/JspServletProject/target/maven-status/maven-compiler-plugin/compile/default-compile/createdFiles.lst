@@ -7,6 +7,7 @@ com\dips\service\UserService.class
 com\dips\dao\UserDao.class
 com\dips\pojo\Message.class
 com\dips\pojo\AddressModel.class
+com\dips\controller\ForgotPassword.class
 com\dips\dao\AddressDao.class
 com\dips\controller\LoginController.class
 com\dips\filter\LoginFilter.class

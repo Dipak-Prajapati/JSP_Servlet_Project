@@ -27,7 +27,19 @@ public class LoginFilter implements Filter {
 		System.out.println("Before Login Filter");
 		if (email != null && password != null && !email.isEmpty() && !password.isEmpty()) {
 			System.out.println("Loggin SuccessFull");
-			chain.doFilter(request, response);
+			if(email.equals("admin@gmail.com") && password.equals("aaaaaaaa"))
+			{
+				System.out.println("Before Admin Filter");
+				chain.doFilter(request, response);
+				System.out.println("After Admin Filter");
+			}
+			else
+			{
+				System.out.println("Before User Filter");
+				chain.doFilter(request, response);
+				System.out.println("After User Filter");
+			}
+			
 		}
 		else
 		{

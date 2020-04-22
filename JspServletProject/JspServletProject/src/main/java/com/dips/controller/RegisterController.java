@@ -203,9 +203,6 @@ public class RegisterController extends HttpServlet {
 			fos.close();
 
 			registerPojo = (UserModel) session.getAttribute("currentUser");
-			// addressPojo = (AddressModel) session.getAttribute("currentAddress");
-			// List<AddressModel> getAddressPojo = new ArrayList<AddressModel>();
-			// getAddressPojo = (List<AddressModel>) session.getAttribute("currentAddress");
 
 			AddressModel addressPojo = new AddressModel();
 			addressPojo.setAddress(address);
@@ -246,12 +243,17 @@ public class RegisterController extends HttpServlet {
 			addressService = new AddressServiceImpl();
 			System.out.println("Controller in registerPojo update code: " + registerPojo);
 			serviceRegister.updateData(registerPojo);
+			registerPojo = serviceRegister.login(email, password);
+			
+			
+			
 			addressService.updateData(addressPojo);
 
 			List<List<Object>> profile = new ArrayList<List<Object>>();
 			profile = addressService.login(userID);
 
 			HttpSession session1 = request.getSession();
+			session.setAttribute("currentUser", registerPojo);
 			session1.setAttribute("currentAddress", profile);
 
 			response.sendRedirect("profile.jsp");

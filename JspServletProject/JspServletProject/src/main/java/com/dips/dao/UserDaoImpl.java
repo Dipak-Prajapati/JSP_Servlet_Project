@@ -6,7 +6,9 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import com.dips.pojo.UserModel;
 import com.dips.singleton.DbConnection;
@@ -130,10 +132,6 @@ public class UserDaoImpl implements UserDao {
 
 			System.out.println(updatePojo.getDob());
 			String query = "update user set firstname=?, middlename=?, lastname=?, email=?, dob=?, mobile_no=?, gender=?, language=?, hobbie=?, password=?, profile_pic=? where user_id=?";
-			// String query = "insert into user(firstname, middlename, lastname, email, dob,
-			// mobile_no, gender, language, hobbie, password,profile_pic)
-			// values(?,?,?,?,?,?,?,?,?,?,?)";
-			// preparedStatement = con.prepareStatement(query);
 			ps = con.prepareStatement(query);
 			System.out.println("Update ps" + ps);
 			ps.setString(1, updatePojo.getFirstName());
@@ -179,6 +177,41 @@ public class UserDaoImpl implements UserDao {
 			e.printStackTrace();
 		}
 		return null;
+	}
+
+	@Override
+	public List<UserModel> getUserData() {
+		// TODO Auto-generated method stub
+		List<UserModel> list = new ArrayList<UserModel>();
+		try {
+			ps = con.prepareStatement("select * from user");
+			result = ps.executeQuery();
+			while (result.next()) {
+				UserModel userModel = new UserModel();
+				userModel.setId(result.getInt("user_id"));
+				userModel.setFirstName(result.getString("firstname"));
+				userModel.setMiddleName(result.getString("middlename"));
+				userModel.setLastName(result.getString("lastname"));
+
+				userModel.setEmail(result.getString("email"));
+				Date date = result.getDate("dob");
+				DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+				String strDate = dateFormat.format(date);
+				userModel.setDob(strDate);
+				userModel.setMobile_no(result.getString("mobile_no"));
+				userModel.setGender(result.getString("gender"));
+				userModel.setLanguage(result.getString("language"));
+				userModel.setHiobbie(result.getString("hobbie"));
+				userModel.setPassword(result.getString("password"));
+				userModel.setImage(result.getString("profile_pic"));
+
+				list.add(userModel);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return list;
+
 	}
 
 }

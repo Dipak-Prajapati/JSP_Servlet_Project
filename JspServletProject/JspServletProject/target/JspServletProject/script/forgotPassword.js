@@ -4,7 +4,7 @@ $("#forgotPassword").click(function(event) {
 	event.preventDefault();
 //	alert("hi");
 	$.ajax({
-		url : "TestingForgot",
+		url : "ForgotPassword",
 		type : "POST",
 		data : {
 			operation : "forgotPassword",

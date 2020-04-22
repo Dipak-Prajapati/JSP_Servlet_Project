@@ -11,18 +11,23 @@
 
 
 <!-- javascript -->
-<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-<script src="script/forgotPassword.js"></script>
-<!-- <script src="script/jquery.js"></script> -->
-<!-- <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script> -->
-<!-- <script
-	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script> -->
+<script src="script/jquery.js"></script>
+<script src="script/popper.min.js"></script>
 <script src="script/bootstrap.min.js"></script>
+
+
+<!-- Data Table -->
+<script src="script/jquery.dataTables.min.js"></script>
+<script src="script/dataTables.bootstrap4.min.js"></script>
+<!-- End Of Data Table -->
+
 <script src="script/validation.js"></script>
 <script src="script/fontawesome.min.js"></script>
 <script src="script/style.js"></script>
 <script src="script/jquery.form-repeater.js"></script>
 <!-- <script src="script/appendAddress.js"></script> -->
+<script src="script/customDatatable.js"></script>
+<script src="script/forgotPassword.js"></script>
 
 <script type="text/javascript">
 	$('#example1').repeater({

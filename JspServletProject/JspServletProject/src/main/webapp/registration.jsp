@@ -10,6 +10,9 @@
 <%-- <c:if test="${sessionScope.currentUser == null}">
 	<c:redirect url="login.jsp"></c:redirect>
 </c:if> --%>
+
+
+
 <c:set var="user" value="${sessionScope.currentUser}" />
 <c:set var="userAddress" value="${sessionScope.currentAddress}" />
 

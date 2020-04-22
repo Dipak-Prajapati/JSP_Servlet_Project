@@ -3,6 +3,8 @@
  */
 package com.dips.dao;
 
+import java.util.List;
+
 import com.dips.pojo.UserModel;
 
 /**
@@ -20,4 +22,6 @@ public interface UserDao {
 	public boolean updateData(UserModel updatePojo);
 	
 	public String findPassword(String name);
+
+	public List<UserModel> getUserData();
 }
