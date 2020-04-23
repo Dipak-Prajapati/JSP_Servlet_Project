@@ -23,7 +23,6 @@ import com.dips.service.AddressServiceImpl;
 import com.dips.service.UserService;
 import com.dips.service.UserServiceImpl;
 
-
 @WebServlet("/RegisterController")
 @MultipartConfig
 public class RegisterController extends HttpServlet {
@@ -39,17 +38,43 @@ public class RegisterController extends HttpServlet {
 	AddressService addressService;
 
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
-		doPost(request, response);
-	}
-	
-	@SuppressWarnings({ "deprecation" })
 
-	
+		HttpSession session = request.getSession();
+
+		registerPojo = new UserModel();
+
+		serviceRegister = new UserServiceImpl();
+
+		AddressService addressService = new AddressServiceImpl();
+
+		if (request.getParameter("operation").equals("Update")) {
+
+			System.out.println("Edit Button Clicked From Admin");
+
+			int userId = Integer.parseInt(request.getParameter("id"));
+
+			registerPojo = serviceRegister.getUserInfo(userId);
+
+			List<List<Object>> addressPojo = new ArrayList<List<Object>>();
+			addressPojo = addressService.login(userId);
+
+			session.setAttribute("currentUser", registerPojo);
+			session.setAttribute("currentAddress", addressPojo);
+			session.setAttribute("operation", request.getParameter("operation"));
+			session.setAttribute("userId", request.getParameter("id"));
+
+			response.sendRedirect("registration.jsp");
+		}
+
+	}
+
+	@SuppressWarnings({ "deprecation" })
 
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
 
 		HttpSession session = request.getSession(true);
-		if (session.getAttribute("currentUser") == null) {
+		// if (session.getAttribute("currentUser") == null) {
+		if (request.getParameter("register").equals("SignUp")) {
 			System.out.println("session.getAttribute(\"currentUser\") == null Registration profile");
 			String fname = request.getParameter("fname");
 			String mname = request.getParameter("mname");
@@ -143,8 +168,8 @@ public class RegisterController extends HttpServlet {
 
 			response.sendRedirect("index.jsp");
 		}
-		if (session.getAttribute("currentUser") != null) {
-
+		// if (session.getAttribute("currentUser") != null) {
+		if (request.getParameter("register").equals("Update")) {
 			System.out.println("session.getAttribute(\"currentUser\") != null update Profile");
 			String fname = request.getParameter("fname");
 			String mname = request.getParameter("mname");
@@ -161,8 +186,10 @@ public class RegisterController extends HttpServlet {
 			String[] state = request.getParameterValues("state");
 			String[] country = request.getParameterValues("country");
 			String[] addID = request.getParameterValues("addID");
+
 			int userID = Integer.parseInt(request.getParameter("id"));
 			int[] addressId = new int[addID.length];
+
 			for (int i = 0; i < addID.length; i++) {
 				System.out.println("addID " + i + " : " + addID[i]);
 
@@ -173,6 +200,17 @@ public class RegisterController extends HttpServlet {
 
 			}
 
+			/*
+			 * String[] buttonValue = request.getParameterValues("buttonId");
+			 * System.out.println("buttonValue:"+buttonValue); int[] buttonValueId = new
+			 * int[buttonValue.length]; for (int i = 0; i < buttonValueId.length; i++) {
+			 * System.out.println("buttonValueId " + i + " : " + buttonValue[i]);
+			 * 
+			 * buttonValueId[i] = Integer.parseInt(buttonValue[i]);
+			 * System.out.println("AddressId" + i + ":" + buttonValueId[i]);
+			 * 
+			 * }
+			 */
 			String password = request.getParameter("pwd");
 
 			Part part = request.getPart("pic");
@@ -211,6 +249,7 @@ public class RegisterController extends HttpServlet {
 			addressPojo.setCountry(country);
 			addressPojo.setAddressId(addressId);
 			addressPojo.setId(userID);
+			// addressPojo.setButtonvalue(buttonValueId);
 
 			// addressPojo.setAddressId(request.getParameterValues("addID"));
 			System.out.println("Update AddressPojo :" + addressPojo);
@@ -244,9 +283,7 @@ public class RegisterController extends HttpServlet {
 			System.out.println("Controller in registerPojo update code: " + registerPojo);
 			serviceRegister.updateData(registerPojo);
 			registerPojo = serviceRegister.login(email, password);
-			
-			
-			
+
 			addressService.updateData(addressPojo);
 
 			List<List<Object>> profile = new ArrayList<List<Object>>();
@@ -256,7 +293,15 @@ public class RegisterController extends HttpServlet {
 			session.setAttribute("currentUser", registerPojo);
 			session1.setAttribute("currentAddress", profile);
 
-			response.sendRedirect("profile.jsp");
+			if (session.getAttribute("role").equals("admin")) {
+				List<UserModel> userData = new ArrayList<>();
+				userData = serviceRegister.getUserData(registerPojo);
+
+				session.setAttribute("userData", userData);
+				response.sendRedirect("profile.jsp");
+			} else {
+				response.sendRedirect("profile.jsp");
+			}
 
 		}
 	}

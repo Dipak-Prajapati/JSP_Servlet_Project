@@ -69,7 +69,7 @@ public class AddressDaoImpl implements AddressDao {
 		String[] city = addressPojo.getCity();
 		String[] state = addressPojo.getState();
 		String[] country = addressPojo.getCountry();
-		//int[] addressId = addressPojo.getAddressId();
+		// int[] addressId = addressPojo.getAddressId();
 		System.out.println("In method after array print");
 		List<Object> list = new ArrayList<Object>();
 		for (int i = 0; i < address.length; i++) {
@@ -78,13 +78,13 @@ public class AddressDaoImpl implements AddressDao {
 			addModelData.add(city[i]);
 			addModelData.add(state[i]);
 			addModelData.add(country[i]);
-			//addModelData.add(addressId[i]);
+			// addModelData.add(addressId[i]);
 			list.add(addModelData);
 		}
 		System.out.println(list);
 		return list;
 	}
-	
+
 	@Override
 	public List<Object> getUpdateaddress(AddressModel addressPojo) {
 		// TODO Auto-generated method stub
@@ -125,7 +125,6 @@ public class AddressDaoImpl implements AddressDao {
 		return userId;
 	}
 
-	
 	@Override
 	public List<List<Object>> login(int id) {
 		// TODO Auto-generated method stub
@@ -163,11 +162,15 @@ public class AddressDaoImpl implements AddressDao {
 		// TODO Auto-generated method stub
 		int status = 0;
 		List<Object> updateAddress = new ArrayList<Object>();
+
+		/*
+		 * if (addressPojo.getButtonvalue() != null) { deleteAddress(addressPojo); }
+		 */
 		updateAddress = getUpdateaddress(addressPojo);
 		int index = 0;
 		while (updateAddress.size() > index) {
 			try {
-				ps = con.prepareStatement(   
+				ps = con.prepareStatement(
 						"update address set address= ?,city = ?,state = ?,country = ? where user_id = ? and address_id = ?");
 				ps.setString(1, ((List<Object>) updateAddress.get(index)).get(0).toString());
 				ps.setString(2, ((List<Object>) updateAddress.get(index)).get(1).toString());
@@ -182,12 +185,30 @@ public class AddressDaoImpl implements AddressDao {
 				e.printStackTrace();
 			}
 			index++;
-			//status = true;
+			// status = true;
 		}
 		return status;
 
 	}
 
-	
+	private void deleteAddress(AddressModel addressPojo) {
+		// TODO Auto-generated method stub
+
+		int[] buttonValue = addressPojo.getButtonvalue();
+		System.out.println("buttonValue : " + buttonValue);
+		for (int i = 0; i < buttonValue.length; i++) {
+			System.out.println("buttonValue" + i + " : " + buttonValue[i]);
+			int buttonId = buttonValue[i];
+			try {
+				ps = con.prepareStatement("delete from address where address_id = ?");
+				ps.setInt(1, buttonId);
+				ps.executeUpdate();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		System.out.println("Delete Query Performed");
+	}
 
 }

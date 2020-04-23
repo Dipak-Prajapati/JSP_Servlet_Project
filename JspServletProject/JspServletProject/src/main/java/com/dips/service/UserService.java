@@ -16,4 +16,6 @@ public interface UserService {
 
 	public List<UserModel> getUserData(UserModel userModel);
 
+	public UserModel getUserInfo(int userId);
+
 }

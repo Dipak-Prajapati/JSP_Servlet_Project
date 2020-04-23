@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class AddressModel {
 
-	public String buttonvalue;
+	public int[] buttonvalue;
 	public int id;
 	public String Email;
 	public String[] address;
@@ -20,12 +20,7 @@ public class AddressModel {
 	public void setId(int id) {
 		this.id = id;
 	}
-	public String getButtonvalue() {
-		return buttonvalue;
-	}
-	public void setButtonvalue(String buttonvalue) {
-		this.buttonvalue = buttonvalue;
-	}
+	
 	public String getEmail() {
 		return Email;
 	}
@@ -62,11 +57,18 @@ public class AddressModel {
 	public void setAddressId(int[] addressId) {
 		this.addressId = addressId;
 	}
+	public int[] getButtonvalue() {
+		return buttonvalue;
+	}
+	public void setButtonvalue(int[] buttonvalue) {
+		this.buttonvalue = buttonvalue;
+	}
 	@Override
 	public String toString() {
-		return "AddressModel [buttonvalue=" + buttonvalue + ", id=" + id + ", Email=" + Email + ", address="
-				+ Arrays.toString(address) + ", city=" + Arrays.toString(city) + ", country=" + Arrays.toString(country)
-				+ ", state=" + Arrays.toString(state) + ", addressId=" + addressId + "]";
+		return "AddressModel [buttonvalue=" + Arrays.toString(buttonvalue) + ", id=" + id + ", Email=" + Email
+				+ ", address=" + Arrays.toString(address) + ", city=" + Arrays.toString(city) + ", country="
+				+ Arrays.toString(country) + ", state=" + Arrays.toString(state) + ", addressId="
+				+ Arrays.toString(addressId) + "]";
 	}
 
 	

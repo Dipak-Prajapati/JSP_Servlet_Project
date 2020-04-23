@@ -28,6 +28,8 @@
 <!-- <script src="script/appendAddress.js"></script> -->
 <script src="script/customDatatable.js"></script>
 <script src="script/forgotPassword.js"></script>
+<!-- <script src="script/custom.js"></script> -->
+
 
 <script type="text/javascript">
 	$('#example1').repeater({

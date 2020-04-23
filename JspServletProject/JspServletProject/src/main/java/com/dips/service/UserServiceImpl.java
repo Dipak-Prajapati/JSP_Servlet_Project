@@ -49,4 +49,10 @@ public class UserServiceImpl implements UserService {
 		return list;
 	}
 
+	@Override
+	public UserModel getUserInfo(int userId) {
+		// TODO Auto-generated method stub
+		return daoRegister.getUserInfo(userId);
+	}
+
 }

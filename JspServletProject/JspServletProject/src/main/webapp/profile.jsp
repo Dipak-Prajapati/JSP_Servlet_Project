@@ -82,7 +82,7 @@ response.setDateHeader("Expires", 0);
 														</div>
 													</div></td>
 												<td class="align-middle"><a class="btn btn-outline-light login-bg"
-													href="registration.jsp?id=${displayData.id}"><span
+													href="RegisterController?role=admin&operation=Update&id=${displayData.id}"><span
 														class="fa fa-edit mr-1"></span>Edit</a></td>
 												<td class="align-middle"><a class="btn btn-outline-light btn-danger"
 													href="#"<%-- ${displayData.id} --%>><span
@@ -120,9 +120,9 @@ response.setDateHeader("Expires", 0);
 <c:if test="${sessionScope.role == 'user' }">
 
 	<!-- validate session -->
-	<c:if test="${sessionScope.currentUser == null}">
+	<%-- <c:if test="${sessionScope.currentUser == null}">
 		<c:redirect url="login.jsp"></c:redirect>
-	</c:if>
+	</c:if> --%>
 	<c:set var="user" value="${sessionScope.currentUser}" />
 	<c:set var="userAddress" value="${sessionScope.currentAddress}" />
 

@@ -7,16 +7,17 @@
 <%@ page import="com.dips.pojo.AddressModel"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+
 <%-- <c:if test="${sessionScope.currentUser == null}">
 	<c:redirect url="login.jsp"></c:redirect>
-</c:if> --%>
-
+</c:if>
+ --%>
 
 
 <c:set var="user" value="${sessionScope.currentUser}" />
 <c:set var="userAddress" value="${sessionScope.currentAddress}" />
-
-<!-- prevent brouser back button after session expires -->
+<%-- <c:set var="role" value="${sessionScope.role}" /> --%>
+<!-- prevent browser back button after session expires -->
 <%-- <%
 	//response.setHeader("Cache-Control", "no-cache");
 	response.setHeader("Cache-Control", "no-store");
@@ -41,7 +42,7 @@
 					<div class="card-header login-bg text-white text-center">
 						<br> <span class="fa fa-user-plus fa-3x"></span><br>
 						<!-- <p>Register Here</p> -->
-						<p>${empty user ? 'Registration Here' : 'Update User Profile'}
+						<p>${empty sessionScope ? 'Registration Here' : 'Update User Profile'}
 						</p>
 					</div>
 					<div class="card-body">
@@ -53,7 +54,7 @@
 							<div class="form-group">
 								<label for="fname">First Name : </label> <input type="text"
 									class="form-control" name="fname" id="fname"
-									value="<c:out value="${user.firstName}"/>"
+									value="<c:out value="${empty sessionScope.firstName ? user.firstName : sessionScope.firstName}"/>"
 									placeholder="Enter Your First Name" onblur="inputfname()"
 									onfocus="resetFirstName()"><br> <span
 									class="error" id="sfname"></span>
@@ -312,7 +313,7 @@
 												value="${list[3]}" /> <br />
 
 											<div class="text-center">
-												<button type="button" class="r-btnRemove btn btn-danger">
+												<button type="button" class="r-btnRemove btn btn-danger" name="deleteAddress" value="${list[4]}" id="deleteAddress">
 													<span class="fa fa-minus-circle" style="font-size: 30px;"></span>
 												</button>
 											</div>
@@ -334,61 +335,6 @@
 
 
 
-							<%-- <c:if test="${sessionScope.currentUser != null}">
-
-								<div id="example1" class="form-group">
-									<div class="text-center">
-										<button type="button" class="r-btnAdd btn btn-success"
-											id="r-btnAdd">
-											<span class="fa fa-plus-circle" style="font-size: 30px;"></span>+
-										</button>
-									</div>
-
-
-									<c:set var="count" value="1" scope="page" />
-									${userAddress}
-
-									<c:forEach var="list" items="${userAddress}">
-										<div class="r-group">
-
-											<label for="address_0_0" class="col-form-label text-md-left">Address
-												${count} :</label> <input type="text" id="user_${count}_address"
-												class="form-control" name="address" value="${list[0]}" />
-
-											<div class="row">
-												<div class="col-md-6">
-													<label for="city_0_0" class="col-form-label text-md-left">City
-														${count} :</label> <input type="text" id="user_${count}_city"
-														class="form-control" name="city" value="${list[1]}" />
-												</div>
-												<div class="col-md-6">
-													<label for="address_0_0"
-														class="col-form-label text-md-left">State
-														${count}:</label> <input type="text" id="user_${count}_state"
-														class="form-control" name="state" value="${list[2]}" />
-												</div>
-											</div>
-											<label for="address_0_0" class="col-form-label text-md-left">Country
-												${count}:</label> <input type="text" id="user_${count}_country"
-												class="form-control" name="country" value="${list[3]}" /> <br />
-
-											<div class="text-center">
-												<button type="button" class="r-btnRemove btn btn-danger">
-													<span class="fa fa-minus-circle" style="font-size: 30px;">
-														 </span>-
-												</button>
-											</div>
-											<input type="text" id="addId${count}" name="addID"
-												value="${list[4]}" /> <input type="text" name="id"
-												id="id${count}" value="${user.id}" />
-										</div>
-										<c:set var="count" value="${count+1}" scope="page" />
-									</c:forEach>
-								</div>
-								<div class="adding"></div>
-
-							</c:if>
- --%>
 							<div class="form-group">
 								<label for="pwd">Password : </label> <input type="Password"
 									class="form-control" name="pwd" id="pwd"
@@ -421,63 +367,18 @@
 							</div>
 
 							<button type="submit" name="register" id="register"
+								value="${empty user ? 'SignUp' : 'Update'}"
 								class="btn btn-outline-light btn-lg login-btn-width login-bg"
 								disabled>${empty user ? 'SignUp' : 'Update'}</button>
-
+							
 							<br>
 
-							<!-- <div class="loader from-group">
-								<div class="preloader-wrapper big active">
-									<div class="spinner-layer spinner-blue">
-										<div class="circle-clipper left">
-											<div class="circle"></div>
-										</div>
-										<div class="gap-patch">
-											<div class="circle"></div>
-										</div>
-										<div class="circle-clipper right">
-											<div class="circle"></div>
-										</div>
-									</div>
+							<c:if test="${sessionScope.role != null}">
+								<a class="btn btn-outline-light btn-lg login-btn-width login-bg"
+									href="profile.jsp"><span
+									class="fa fa-times-circle mr-1"></span>Cancel</a>
+							</c:if>
 
-									<div class="spinner-layer spinner-red">
-										<div class="circle-clipper left">
-											<div class="circle"></div>
-										</div>
-										<div class="gap-patch">
-											<div class="circle"></div>
-										</div>
-										<div class="circle-clipper right">
-											<div class="circle"></div>
-										</div>
-									</div>
-
-									<div class="spinner-layer spinner-yellow">
-										<div class="circle-clipper left">
-											<div class="circle"></div>
-										</div>
-										<div class="gap-patch">
-											<div class="circle"></div>
-										</div>
-										<div class="circle-clipper right">
-											<div class="circle"></div>
-										</div>
-									</div>
-
-									<div class="spinner-layer spinner-green">
-										<div class="circle-clipper left">
-											<div class="circle"></div>
-										</div>
-										<div class="gap-patch">
-											<div class="circle"></div>
-										</div>
-										<div class="circle-clipper right">
-											<div class="circle"></div>
-										</div>
-									</div>
-								</div>
-							</div>
- -->
 						</form>
 					</div>
 				</div>

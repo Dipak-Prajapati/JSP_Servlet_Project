@@ -24,4 +24,6 @@ public interface UserDao {
 	public String findPassword(String name);
 
 	public List<UserModel> getUserData();
+
+	public UserModel getUserInfo(int userId);
 }

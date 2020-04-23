@@ -214,4 +214,46 @@ public class UserDaoImpl implements UserDao {
 
 	}
 
+	@Override
+	public UserModel getUserInfo(int userId) {
+		// TODO Auto-generated method stub
+		UserModel userModel = null;
+		try {
+			String query = "select * from user where user_id=?";
+
+			ps = con.prepareStatement(query);
+			ps.setInt(1, userId);
+			result = ps.executeQuery();
+
+			if (result.next()) {
+				userModel = new UserModel();
+
+				userModel.setId(result.getInt("user_id"));
+				userModel.setFirstName(result.getString("firstname"));
+				userModel.setMiddleName(result.getString("middlename"));
+				userModel.setLastName(result.getString("lastname"));
+
+				userModel.setEmail(result.getString("email"));
+				Date date = result.getDate("dob");
+				// Date date = Calendar.getInstance().getTime();
+				DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+				String strDate = dateFormat.format(date);
+				userModel.setDob(strDate);
+				userModel.setMobile_no(result.getString("mobile_no"));
+				userModel.setGender(result.getString("gender"));
+				userModel.setLanguage(result.getString("language"));
+				userModel.setHiobbie(result.getString("hobbie"));
+				userModel.setPassword(result.getString("password"));
+				userModel.setImage(result.getString("profile_pic"));
+				// profile_pic
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		return userModel;
+
+	}
+
 }

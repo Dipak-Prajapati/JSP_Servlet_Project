@@ -9,7 +9,7 @@
 	response.setHeader("Pragma", "no-cache");
 	response.setDateHeader("Expires", 0);
 	
-	if(session.getAttribute("currentUser")!=null)
+	if(session.getAttribute("role")!=null)
 	    response.sendRedirect("profile.jsp");
 %>
 
