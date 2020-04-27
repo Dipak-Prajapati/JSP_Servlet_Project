@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import com.dips.pojo.AddressModel;
 import com.dips.pojo.UserModel;
 import com.dips.singleton.DbConnection;
 
@@ -254,6 +255,33 @@ public class UserDaoImpl implements UserDao {
 
 		return userModel;
 
+	}
+
+	@Override
+	public boolean deleteData(int userId) {
+		// TODO Auto-generated method stub
+
+		AddressDao addressDao = new AddressDaoImpl();
+		boolean status = addressDao.deleteData(userId);
+
+		if (status == true) {
+			try {
+				ps = con.prepareStatement("delete from user where user_id = ?");
+				ps.setInt(1, userId);
+
+				int check = ps.executeUpdate();
+
+				if (check > 0) {
+					return true;
+				} else {
+					return false;
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+
+		return false;
 	}
 
 }

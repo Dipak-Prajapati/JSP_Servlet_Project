@@ -18,4 +18,6 @@ public interface UserService {
 
 	public UserModel getUserInfo(int userId);
 
+	public boolean deleteData(int userId);
+
 }

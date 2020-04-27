@@ -34,12 +34,14 @@ public class LogoutController extends HttpServlet {
 		 * response.sendRedirect("login.jsp");
 		 */
 
-		HttpSession session = request.getSession();
+		HttpSession session = request.getSession(false);
 
 		if (session != null) {
-			session.removeAttribute("role"); // session.invalidate();
+			/* session.removeAttribute("role"); */ 
+			session.invalidate();
 			Message msg = new Message("Logout SuccessFully", "success", "alert-success");
-			session.setAttribute("Msg", msg);
+			HttpSession session1 = request.getSession();
+			session1.setAttribute("Msg", msg);
 		
 			// redirect to login page 
 			response.sendRedirect("login.jsp");

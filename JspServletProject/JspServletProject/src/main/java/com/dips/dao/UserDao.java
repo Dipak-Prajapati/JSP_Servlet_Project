@@ -26,4 +26,6 @@ public interface UserDao {
 	public List<UserModel> getUserData();
 
 	public UserModel getUserInfo(int userId);
+
+	public boolean deleteData(int userId);
 }

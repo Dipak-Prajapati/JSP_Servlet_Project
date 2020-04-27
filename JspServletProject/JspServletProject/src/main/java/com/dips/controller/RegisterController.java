@@ -39,6 +39,7 @@ public class RegisterController extends HttpServlet {
 
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
 
+		System.out.println("delete in doGet");
 		HttpSession session = request.getSession();
 
 		registerPojo = new UserModel();
@@ -47,7 +48,7 @@ public class RegisterController extends HttpServlet {
 
 		AddressService addressService = new AddressServiceImpl();
 
-		if (request.getParameter("operation").equals("Update")) {
+		if (request.getParameter("operation").contentEquals("Update")) {
 
 			System.out.println("Edit Button Clicked From Admin");
 
@@ -65,6 +66,7 @@ public class RegisterController extends HttpServlet {
 
 			response.sendRedirect("registration.jsp");
 		}
+		
 
 	}
 
@@ -169,7 +171,7 @@ public class RegisterController extends HttpServlet {
 			response.sendRedirect("index.jsp");
 		}
 		// if (session.getAttribute("currentUser") != null) {
-		if (request.getParameter("register").equals("Update")) {
+		else if (request.getParameter("register").equals("Update")) {
 			System.out.println("session.getAttribute(\"currentUser\") != null update Profile");
 			String fname = request.getParameter("fname");
 			String mname = request.getParameter("mname");
@@ -283,7 +285,11 @@ public class RegisterController extends HttpServlet {
 			System.out.println("Controller in registerPojo update code: " + registerPojo);
 			serviceRegister.updateData(registerPojo);
 			registerPojo = serviceRegister.login(email, password);
-
+			
+			/*
+			 * if(request.getParameter("operation").contentEquals("newAddress")) {
+			 * addressService.insertAddress(addressPojo); }
+			 */
 			addressService.updateData(addressPojo);
 
 			List<List<Object>> profile = new ArrayList<List<Object>>();

@@ -76,17 +76,19 @@ response.setDateHeader("Expires", 0);
 												<td class="align-middle">${displayData.mobile_no}</td>
 												<td class="align-middle">${displayData.gender}</td>
 												<td class="align-middle">${displayData.language}</td>
-												<td class="align-middle"><div class="admin_image_outer_container">
+												<td class="align-middle"><div
+														class="admin_image_outer_container">
 														<div class="admin_image_inner_container">
 															<img src="image/${displayData.image}" class="img-fluid">
 														</div>
 													</div></td>
-												<td class="align-middle"><a class="btn btn-outline-light login-bg"
+												<td class="align-middle"><a
+													class="btn btn-outline-light login-bg"
 													href="RegisterController?role=admin&operation=Update&id=${displayData.id}"><span
 														class="fa fa-edit mr-1"></span>Edit</a></td>
-												<td class="align-middle"><a class="btn btn-outline-light btn-danger"
-													href="#"<%-- ${displayData.id} --%>><span
-														class="fa fa-trash mr-1"></span>Delete</a></td>
+												<td class="align-middle"><button id="deleteButton" value="${displayData.id}"
+													class="btn btn-outline-light btn-danger"><span
+														class="fa fa-trash mr-1"></span>Delete</button></td>
 											</tr>
 										</c:forEach>
 									</tbody>

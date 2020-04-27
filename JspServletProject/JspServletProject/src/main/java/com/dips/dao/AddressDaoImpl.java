@@ -5,7 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-
+import java.util.Iterator;
 import java.util.List;
 
 import com.dips.pojo.AddressModel;
@@ -93,6 +93,17 @@ public class AddressDaoImpl implements AddressDao {
 		String[] state = addressPojo.getState();
 		String[] country = addressPojo.getCountry();
 		int[] addressId = addressPojo.getAddressId();
+
+		/*
+		 * for (int j = 0; j < addressId.length; j++) { if (addressId[j] == 555) {
+		 * 
+		 * insertAddress(addressPojo);
+		 * 
+		 * addressId[j] = addressId[j + 1]; address[j] = address[j + 1]; city[j] =
+		 * city[j + 1]; state[j] = state[j + 1]; country[j] = country[j + 1]; }
+		 * 
+		 * }
+		 */
 		System.out.println("In method after array print");
 		List<Object> list = new ArrayList<Object>();
 		for (int i = 0; i < address.length; i++) {
@@ -166,6 +177,8 @@ public class AddressDaoImpl implements AddressDao {
 		/*
 		 * if (addressPojo.getButtonvalue() != null) { deleteAddress(addressPojo); }
 		 */
+		deleteAddress(addressPojo);
+		insertAdd(addressPojo);
 		updateAddress = getUpdateaddress(addressPojo);
 		int index = 0;
 		while (updateAddress.size() > index) {
@@ -191,24 +204,98 @@ public class AddressDaoImpl implements AddressDao {
 
 	}
 
-	private void deleteAddress(AddressModel addressPojo) {
+	private void insertAdd(AddressModel addressPojo) {
 		// TODO Auto-generated method stub
+		int userId = addressPojo.getId();
+		int[] addressId = addressPojo.getAddressId();
 
-		int[] buttonValue = addressPojo.getButtonvalue();
-		System.out.println("buttonValue : " + buttonValue);
-		for (int i = 0; i < buttonValue.length; i++) {
-			System.out.println("buttonValue" + i + " : " + buttonValue[i]);
-			int buttonId = buttonValue[i];
-			try {
-				ps = con.prepareStatement("delete from address where address_id = ?");
-				ps.setInt(1, buttonId);
-				ps.executeUpdate();
-			} catch (SQLException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
+		for (int i = 0; i < addressId.length; i++) {
+			if (addressId[i] == 555) {
+				System.out.println("555 id : addressId[" + i + "] :" + addressId[i]);
+				try {
+					ps = con.prepareStatement(
+							"insert into address(address, city, state, country, user_id)values(?,?,?,?,?)");
+					ps.setString(1, addressPojo.address[i]);
+					ps.setString(2, addressPojo.city[i]);
+					ps.setString(3, addressPojo.state[i]);
+					ps.setString(4, addressPojo.country[i]);
+					ps.setInt(5, userId);
+					ps.executeUpdate();
+					System.out.println("insert address");
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
 			}
 		}
-		System.out.println("Delete Query Performed");
 	}
 
+	@SuppressWarnings("null")
+	private void deleteAddress(AddressModel addressPojo) {
+		// TODO Auto-generated method stub
+		int userId = addressPojo.getId();
+		int[] addressId = addressPojo.getAddressId();
+		System.out.println("deleteAddress() in :" + userId);
+		try {
+			String query = "select address_id from address where user_id=?";
+			ps = con.prepareStatement(query);
+			ps.setInt(1, userId);
+			result = ps.executeQuery();
+			List<Integer> delId = new ArrayList<Integer>();
+			while (result.next()) {
+				System.out.println("deleteAddress() in address_id : " + result.getInt("address_id"));
+				delId.add(result.getInt("address_id"));
+			}
+			//int[] addId = new int[addressId.length];
+			List<Integer> addId = new ArrayList<Integer>();
+			for(int k = 0; k < addressId.length; k++)
+			{
+				if(addressId[k] != 555)
+				{
+					addId.add(addressId[k]);
+				}
+			}
+			for (int i = 0; i < delId.size(); i++) {
+				for (int j = 0; j < addId.size(); j++) {
+
+					if (delId.get(i) == addId.get(j)) {
+						System.out.println("same id : addId[" + j + "] :" + addId.get(j) + " sdelId.get(" + i + ")"
+								+ delId.get(i));
+					}
+
+					else {
+						System.out.println("Different id : addId[" + j + "] :" + addId.get(j) + " sdelId.get(" + i
+								+ ")" + delId.get(i));
+						ps = con.prepareStatement("delete from address where address_id = ?");
+						ps.setInt(1, delId.get(i));
+						ps.executeUpdate();
+						System.out.println("Delete Query Performed");
+					}
+				}
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+	}
+
+	@Override
+	public boolean deleteData(int userId) {
+		// TODO Auto-generated method stub
+		try {
+			ps = con.prepareStatement("delete from address where user_id = ?");
+			ps.setInt(1, userId);
+
+			int status = ps.executeUpdate();
+
+			if (status > 0) {
+				return true;
+			} else {
+				return false;
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return false;
+	}
 }

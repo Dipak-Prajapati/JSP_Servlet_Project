@@ -55,4 +55,10 @@ public class UserServiceImpl implements UserService {
 		return daoRegister.getUserInfo(userId);
 	}
 
+	@Override
+	public boolean deleteData(int userId) {
+		// TODO Auto-generated method stub
+		return daoRegister.deleteData(userId);
+	}
+
 }

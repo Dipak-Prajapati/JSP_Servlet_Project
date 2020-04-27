@@ -16,4 +16,6 @@ public interface AddressDao {
 	public List<List<Object>> login(int id);
 
 	public int updateData(AddressModel addressPojo);
+	
+	public boolean deleteData(int userId);
 }

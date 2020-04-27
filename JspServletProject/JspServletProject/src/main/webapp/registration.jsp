@@ -16,7 +16,7 @@
 
 <c:set var="user" value="${sessionScope.currentUser}" />
 <c:set var="userAddress" value="${sessionScope.currentAddress}" />
-<%-- <c:set var="role" value="${sessionScope.role}" /> --%>
+<c:set var="role" value="${sessionScope.role}" />
 <!-- prevent browser back button after session expires -->
 <%-- <%
 	//response.setHeader("Cache-Control", "no-cache");
@@ -42,7 +42,7 @@
 					<div class="card-header login-bg text-white text-center">
 						<br> <span class="fa fa-user-plus fa-3x"></span><br>
 						<!-- <p>Register Here</p> -->
-						<p>${empty sessionScope ? 'Registration Here' : 'Update User Profile'}
+						<p>${empty role ? 'Registration Here' : 'Update User Profile'}
 						</p>
 					</div>
 					<div class="card-body">
@@ -218,12 +218,13 @@
 
 								<div id="example1" class="form-group">
 									<div class="text-center">
-										<button type="button" class="r-btnAdd btn btn-success">
+										<button type="button" class="r-btnAdd btn btn-success"
+											id="r-btnAdd">
 											<span class="fa fa-plus-circle" style="font-size: 30px;"></span>
 										</button>
 									</div>
 
-									<div class="r-group">
+									<div class="r-group" id="repeater">
 										<label for="address_0_0" class="col-form-label text-md-left"
 											data-pattern-text="Address +=1:">Address :</label>
 
@@ -238,55 +239,59 @@
 													data-pattern-id="user_++_city" name="city" />
 											</div>
 											<div class="col-md-6">
-												<label for="address_0_0" class="col-form-label text-md-left"
+												<label for="state_0_0" class="col-form-label text-md-left"
 													data-pattern-text="State +=1:">State :</label> <input
 													type="text" id="user_0_state" class="form-control"
 													data-pattern-id="user_++_state" name="state" />
 											</div>
 										</div>
-										<label for="address_0_0" class="col-form-label text-md-left"
+										<label for="country_0_0" class="col-form-label text-md-left"
 											data-pattern-text="Country +=1:">Country :</label> <input
 											type="text" id="user_0_country" class="form-control"
 											data-pattern-id="user_++_country" name="country" /> <br />
 
 
 										<div class="text-center">
-											<button type="button" class="r-btnRemove btn btn-danger">
+											<button type="button" class="r-btnRemove btn btn-danger"
+												id="r-BTNREMOVE">
 												<span class="fa fa-minus-circle" style="font-size: 30px;"></span>
 											</button>
 										</div>
 
 
-										<input type="hidden" id="custId" name="addID" value="">
+										<input type="hidden" id="custId" name="addID" value="555">
 										<input type="hidden" name="id" value="${user.id}">
 
 									</div>
-
+									<div class="dynamicAddingAddress"></div>
 								</div>
 							</c:if>
 
 							<c:if test="${sessionScope.currentUser != null}">
 
+
 								<div id="example1" class="form-group">
 									<div class="text-center">
 										<button type="button" class="r-btnAdd btn btn-success"
-											id="r-btnAdd">
+											id="r-btnAdd" value="add">
 											<span class="fa fa-plus-circle" style="font-size: 30px;"></span>
 										</button>
 									</div>
 
 
-									<c:set var="count" value="1" scope="page" />
-									<%-- ${userAddress} --%>
-
+									<%-- 		<c:set var="count" value="0" scope="page" />
+									${userAddress}
+							 --%>
 									<c:forEach var="list" items="${userAddress}">
-										<div class="r-group">
+										<%-- <c:if test="${fn:length(list) gt 0}"> --%>
+
+										<div class="r-group" id="repeater">
 
 											<label for="address_0_0" class="col-form-label text-md-left"
 												data-pattern-text="Address +=1:">Address :</label> <input
 												type="text" id="user_0_address" class="form-control"
 												data-pattern-id="user_++_address" name="address"
-												value="${list[0]}" />
+												value="${empty list[0] ? 'address':list[0]}" />
 											<!-- </textarea> -->
 
 											<div class="row">
@@ -295,42 +300,41 @@
 														data-pattern-text="City +=1:">City :</label> <input
 														type="text" id="user_0_city" class="form-control"
 														data-pattern-id="user_++_city" name="city"
-														value="${list[1]}" />
+														value="${empty list[1] ? 'city' : list[1]}" />
 												</div>
 												<div class="col-md-6">
-													<label for="address_0_0"
-														class="col-form-label text-md-left"
+													<label for="state_0_0" class="col-form-label text-md-left"
 														data-pattern-text="State +=1:">State :</label> <input
 														type="text" id="user_0_state" class="form-control"
 														data-pattern-id="user_++_state" name="state"
 														value="${list[2]}" />
 												</div>
 											</div>
-											<label for="address_0_0" class="col-form-label text-md-left"
+											<label for="country_0_0" class="col-form-label text-md-left"
 												data-pattern-text="Country +=1:">Country :</label> <input
 												type="text" id="user_0_country" class="form-control"
 												data-pattern-id="user_++_country" name="country"
 												value="${list[3]}" /> <br />
 
 											<div class="text-center">
-												<button type="button" class="r-btnRemove btn btn-danger" name="deleteAddress" value="${list[4]}" id="deleteAddress">
+												<button type="button" class="r-btnRemove btn btn-danger"
+													id="r-BTNREMOVE" name="deleteAddress" value="remove"
+													id="deleteAddress">
 													<span class="fa fa-minus-circle" style="font-size: 30px;"></span>
 												</button>
 											</div>
 
 											<input type="hidden" id="addId_" data-pattern-id="addId_+=1"
-												name="addID" value="${list[4]}" /> <input type="hidden"
-												name="id" id="id_" data-pattern-id="id_+=1"
-												value="${user.id}" />
+												name="addID" value="${list[4]}" />
 
 										</div>
-										<c:set var="count" value="${count+1}" scope="page" />
+										<%-- <c:set var="count" value="${count+1}" scope="page" /> --%>
+										<%-- </c:if> --%>
 									</c:forEach>
-
+									<div class="dynamicAddingAddress"></div>
+									<input type="hidden" name="id" id="id_"
+										data-pattern-id="id_+=1" value="${user.id}" />
 								</div>
-
-								<div class="adding"></div>
-
 							</c:if>
 
 
@@ -357,9 +361,8 @@
 								<label for="img">Upload Profile : </label><br>
 								<div class="d-flex">
 									<input type="file" class="form-control-file" name="pic"
-										id="pic" accept="image/png, image/jpeg"
+										id="pic" accept="image/*"
 										onchange="inputFile() ; readURL(this)" onfocus="resetFile()">
-
 									<img id="preview" class="rounded float-right"
 										<c:if test="${user.image != null}">src="image/${user.image}"</c:if>><br>
 								</div>
@@ -370,13 +373,12 @@
 								value="${empty user ? 'SignUp' : 'Update'}"
 								class="btn btn-outline-light btn-lg login-btn-width login-bg"
 								disabled>${empty user ? 'SignUp' : 'Update'}</button>
-							
+
 							<br>
 
 							<c:if test="${sessionScope.role != null}">
 								<a class="btn btn-outline-light btn-lg login-btn-width login-bg"
-									href="profile.jsp"><span
-									class="fa fa-times-circle mr-1"></span>Cancel</a>
+									href="profile.jsp"><span class="fa fa-times-circle mr-1"></span>Cancel</a>
 							</c:if>
 
 						</form>

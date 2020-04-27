@@ -36,7 +36,7 @@ function inputFile()
 {
 	var file = document.getElementById("pic").files[0];
 	var fileName = document.getElementById("pic").value;
-	var allowed_extensions = new Array("jpg","png","gif");
+	var allowed_extensions = new Array("jpg","png","gif","jpeg");
 	var file_extension = fileName.split('.').pop();
 	var valid = false;
 	

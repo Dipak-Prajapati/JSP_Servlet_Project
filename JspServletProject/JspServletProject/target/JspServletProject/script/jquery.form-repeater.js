@@ -71,7 +71,7 @@
 
         $btnAdd = $container.find('.' + $container.opts.btnAddClass);
         if (!$btnAdd.length) {
-           // alert('You must specify a valid jQuery selector for the add button option in Form Repeater.');
+            //alert('You must specify a valid jQuery selector for the add button option in Form Repeater.');
             return false;
         }
 
@@ -459,8 +459,15 @@
     animationSpeed: 400,
     animationEasing: 'swing',
     clearValues: true
-});*/
-
+}[
+	   {
+	       "address":"",
+	       "city":"",
+	       "state":"",
+	       "country":""
+	   }
+	]);
+*/
 
 // default values
 $.fn.repeater.defaults = {
