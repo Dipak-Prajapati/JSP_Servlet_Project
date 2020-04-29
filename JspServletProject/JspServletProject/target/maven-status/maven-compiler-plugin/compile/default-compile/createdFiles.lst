@@ -9,9 +9,11 @@ com\dips\pojo\Message.class
 com\dips\pojo\AddressModel.class
 com\dips\controller\ForgotPassword.class
 com\dips\dao\AddressDao.class
+com\dips\controller\DeleteUser.class
 com\dips\controller\LoginController.class
 com\dips\filter\LoginFilter.class
 com\dips\pojo\UserModel.class
 com\dips\service\AddressServiceImpl.class
+com\dips\filter\Validation.class
 com\dips\controller\LogoutController.class
 com\dips\service\AddressService.class

@@ -61,4 +61,15 @@ public class UserServiceImpl implements UserService {
 		return daoRegister.deleteData(userId);
 	}
 
+	@Override
+	public boolean emailExist(String email) {
+		// TODO Auto-generated method stub
+		if(daoRegister.emailExist(email)) {
+			return true;
+		}
+		else {
+			return false;
+		}
+	}
+
 }

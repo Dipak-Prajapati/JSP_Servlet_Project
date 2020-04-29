@@ -1,4 +1,5 @@
 D:\INEXTURE\JspServletProject\JspServletProject\src\main\java\com\dips\filter\LoginFilter.java
+D:\INEXTURE\JspServletProject\JspServletProject\src\main\java\com\dips\filter\Validation.java
 D:\INEXTURE\JspServletProject\JspServletProject\src\main\java\com\dips\dao\AddressDaoImpl.java
 D:\INEXTURE\JspServletProject\JspServletProject\src\main\java\com\dips\service\AddressServiceImpl.java
 D:\INEXTURE\JspServletProject\JspServletProject\src\main\java\com\dips\pojo\AddressModel.java
@@ -6,6 +7,7 @@ D:\INEXTURE\JspServletProject\JspServletProject\src\main\java\com\dips\pojo\User
 D:\INEXTURE\JspServletProject\JspServletProject\src\main\java\com\dips\dao\AddressDao.java
 D:\INEXTURE\JspServletProject\JspServletProject\src\main\java\com\dips\controller\LogoutController.java
 D:\INEXTURE\JspServletProject\JspServletProject\src\main\java\com\dips\controller\ForgotPassword.java
+D:\INEXTURE\JspServletProject\JspServletProject\src\main\java\com\dips\controller\DeleteUser.java
 D:\INEXTURE\JspServletProject\JspServletProject\src\main\java\com\dips\dao\UserDao.java
 D:\INEXTURE\JspServletProject\JspServletProject\src\main\java\com\dips\singleton\DbConnection.java
 D:\INEXTURE\JspServletProject\JspServletProject\src\main\java\com\dips\service\AddressService.java

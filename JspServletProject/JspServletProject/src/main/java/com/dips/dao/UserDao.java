@@ -28,4 +28,6 @@ public interface UserDao {
 	public UserModel getUserInfo(int userId);
 
 	public boolean deleteData(int userId);
+	
+	public boolean emailExist(String email);
 }

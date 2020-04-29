@@ -1,45 +1,3 @@
-/**
- * 
- */
-// Delete User address
-/*
- * $("[id^=deleteAddress]").click(function() {
- * 
- * //event.preventDefault(); //getting button value //var id = $(this).val();
- * 
- * $.ajax({ type : "POST", url : "RegisterController", data : { operation :
- * 'deleteAddress', buttonId : $(this).val() }, success : function(data) {
- * alert(data); location.reload(); }, error : function(data) {
- * alert("ERROR!!!"); } }); return false; });
- */
-
-// add new address
-/*$("[id^=r-btnAdd]").click(function() {
-	// getting button value 
-	var id = $(this).val();
-
-	$.ajax({
-		type : "POST",
-		url : "RegisterController",
-		data : {
-
-			operation : 'newAddress',
-			Address : $(".address" + id).val(),
-			City : $(".city" + id).val(),
-			State : $(".state" + id).val(),
-			Country : $(".country" + id).val(),
-			userId : id
-		},
-		success : function(data) {
-			alert(data);
-			window.location.reload();
-		},
-		error : function(data) {
-			//alert("Something went wrong Please try again");
-		}
-	});
-
-});*/
 
 // Delete user from admin
 /* [id^=delete] */
@@ -56,7 +14,7 @@ $("[id^=delete]").click(function() {
 	$(this).closest("tr").remove();
 
 	$.ajax({
-		url : "ForgotPassword",
+		url : "DeleteUser",
 		type : "POST",
 		data : {
 			operation : "deleteUser",

@@ -25,6 +25,15 @@
 	</servlet-mapping>
 	
 	<filter>
+		<filter-name>validate</filter-name>
+		<filter-class>com.dips.filter.Validation</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>validate</filter-name>
+		<url-pattern>/Registration</url-pattern>
+	</filter-mapping>
+	
+	<filter>
 		<filter-name>login</filter-name>
 		<filter-class>com.dips.filter.LoginFilter</filter-class>
 	</filter>

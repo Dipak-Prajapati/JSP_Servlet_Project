@@ -103,7 +103,7 @@ public class UserDaoImpl implements UserDao {
 				userModel.setEmail(result.getString("email"));
 				Date date = result.getDate("dob");
 				// Date date = Calendar.getInstance().getTime();
-				DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+				DateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy");
 				String strDate = dateFormat.format(date);
 				userModel.setDob(strDate);
 				userModel.setMobile_no(result.getString("mobile_no"));
@@ -196,7 +196,7 @@ public class UserDaoImpl implements UserDao {
 
 				userModel.setEmail(result.getString("email"));
 				Date date = result.getDate("dob");
-				DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+				DateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy");
 				String strDate = dateFormat.format(date);
 				userModel.setDob(strDate);
 				userModel.setMobile_no(result.getString("mobile_no"));
@@ -237,7 +237,7 @@ public class UserDaoImpl implements UserDao {
 				userModel.setEmail(result.getString("email"));
 				Date date = result.getDate("dob");
 				// Date date = Calendar.getInstance().getTime();
-				DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+				DateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy");
 				String strDate = dateFormat.format(date);
 				userModel.setDob(strDate);
 				userModel.setMobile_no(result.getString("mobile_no"));
@@ -282,6 +282,28 @@ public class UserDaoImpl implements UserDao {
 		}
 
 		return false;
+	}
+
+	@Override
+	public boolean emailExist(String email) {
+		// TODO Auto-generated method stub
+		String query = "select email from user where email=?";
+
+		try {
+			ps = con.prepareStatement(query);
+			ps.setString(1, email);
+			ResultSet rs = ps.executeQuery();
+
+			if (rs.next()) {
+				return true;
+			}
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+
+		return false;
+
 	}
 
 }

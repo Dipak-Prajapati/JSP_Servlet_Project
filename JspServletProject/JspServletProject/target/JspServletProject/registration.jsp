@@ -46,46 +46,48 @@
 						</p>
 					</div>
 					<div class="card-body">
+
 						<form name="reg" id="reg" method="post" action="Registration"
-							onsubmit='return validate()' enctype='multipart/form-data'>
+							
+							enctype='multipart/form-data'>
 							<!-- <h1 class="h1-center">Registration</h1> -->
 							<span class="error" id="shead"></span>
 
 							<div class="form-group">
 								<label for="fname">First Name : </label> <input type="text"
 									class="form-control" name="fname" id="fname"
-									value="<c:out value="${empty sessionScope.firstName ? user.firstName : sessionScope.firstName}"/>"
+									value="<c:out value="${empty user.firstName ? fn:escapeXml(param.fname) : user.firstName}"/>"
 									placeholder="Enter Your First Name" onblur="inputfname()"
 									onfocus="resetFirstName()"><br> <span
-									class="error" id="sfname"></span>
+									class="error" id="sfname">${sessionScope.fname}</span>
 							</div>
 
 							<div class="form-group">
 								<label for="mname">Middle Name : </label> <input type="text"
 									class="form-control" name="mname" id="mname"
-									value="<c:out value="${user.middleName}"/>"
+									value="<c:out value="${empty user.middleName ? fn:escapeXml(param.mname) :user.middleName}"/>"
 									placeholder="Enter Your Middle Name" onblur="inputmname()"
 									onfocus="resetMiddleName()"><br> <span
-									class="error" id="smname"></span>
+									class="error" id="smname">${sessionScope.mname}</span>
 							</div>
 
 
 							<div class="form-group">
 								<label for="lname">Last Name : </label> <input type="text"
 									class="form-control" name="lname" id="lname"
-									value="<c:out value="${user.lastName}"/>"
+									value="<c:out value="${empty user.lastName ? fn:escapeXml(param.lname) :user.lastName}"/>"
 									placeholder="Enter Your Last Name" onblur="inputlname()"
 									onfocus="resetLastName()"><br> <span class="error"
-									id="slname"></span>
+									id="slname">${sessionScope.lname}</span>
 							</div>
 
 							<div class="form-group">
 								<label for="email">Email Id : </label> <input type="text"
 									class="form-control" name="email" id="email"
-									value="<c:out value="${user.email}"/>"
+									value="<c:out value="${empty user.email ? fn:escapeXml(param.email) :user.email}"/>"
 									placeholder="Enter Your Email" onblur="inputemail()"
 									onfocus="resetEmail()"><br> <span class="error"
-									id="semail"></span>
+									id="semail">${sessionScope.email}</span>
 							</div>
 							<fmt:parseDate value="${user.dob}" var="parseDate"
 								pattern="MM/dd/yyyy" />
@@ -95,17 +97,18 @@
 							<div class="form-group">
 								<label for="dob">Date Of Birth : </label> <input type="date"
 									class="form-control" name="dob" id="dob" onblur="inputdob()"
-									onfocus="resetDob()" value="<c:out value="${sampleDate}"/>">
-								<br> <span class="error" id="sdob"></span>
+									onfocus="resetDob()"
+									value="<c:out value="${empty user.dob ? fn:escapeXml(param.dob) :sampleDate}"/>">
+								<br> <span class="error" id="sdob">${sessionScope.dob}</span>
 							</div>
 
 							<div class="form-group">
 								<label for="m_no">Mobile No : </label> <input type="text"
 									class="form-control" name="m_no" id="m_no" maxlength="10"
-									value="<c:out value="${user.mobile_no}"/>"
+									value="<c:out value="${empty user.mobile_no ? fn:escapeXml(param.m_no) :user.mobile_no}"/>"
 									placeholder="Enter Your Mobile Number" onblur="inputmno()"
 									onfocus="resetMno()"><br> <span class="error"
-									id="sm_no"></span>
+									id="sm_no">${sessionScope.number}</span>
 							</div>
 
 							<div class="check">
@@ -113,7 +116,8 @@
 									<label for="gender">Gender : </label>
 									<div class="space">
 										<input type="radio" class="form-check-input" name="gender"
-											value="male" ${user.gender == 'male' ? 'checked' : '' }
+											value="male"
+											${empty user.gender == 'male' ? 'checked' : 'checked' }
 											onblur="inputgender()" onfocus="resetGender()"><label
 											for="form-check-label">: Male</label>
 									</div>
@@ -135,7 +139,7 @@
 									<div class="space">
 										<input type="checkbox" class="form-check-input"
 											name="language" value="gujarati"
-											${user.language == 'gujarati' ? 'checked' : '' }
+											${empty user.language == 'gujarati' ? 'checked' : 'checked' }
 											onblur="inputlanguage()" onfocus="resetLanguage()"> <label
 											for="form-check-label">: Gujarati </label>
 									</div>
@@ -158,7 +162,7 @@
 											for="form-check-label">: Enghlish </label>
 									</div>
 								</div>
-								<br> <span class="error" id="scheck"></span>
+								<br> <span class="error" id="scheck">${requestScope.language}</span>
 							</div>
 
 							<div class="form-group">
@@ -166,9 +170,8 @@
 									class="form-control" id="hobbie" onblur="inputHobbie()"
 									onfocus="resetHobbie()">
 									<optgroup label="Game">
-										<option value=""></option>
 										<option value="CSGO"
-											${user.hiobbie == 'CSGO' ? 'selected' : '' }>CSGO</option>
+											${user.hiobbie == 'CSGO' ? 'selected' : 'selected' }>CSGO</option>
 										<option value="PUBG"
 											${user.hiobbie == 'PUBG' ? 'selected' : '' }>PUBG</option>
 									</optgroup>
@@ -215,7 +218,7 @@
 
 							<c:if test="${sessionScope.currentUser == null}">
 
-
+								<c:set var="count" value="1" scope="page" />
 								<div id="example1" class="form-group">
 									<div class="text-center">
 										<button type="button" class="r-btnAdd btn btn-success"
@@ -226,31 +229,32 @@
 
 									<div class="r-group" id="repeater">
 										<label for="address_0_0" class="col-form-label text-md-left"
-											data-pattern-text="Address +=1:">Address :</label>
-
-										<textarea id="user_0_address" class="form-control"
-											data-pattern-id="user_++_address" name="address"></textarea>
-
+											data-pattern-text="Address +=1:">Address :</label> <input
+											type="text" id="user_${count}_address" class="form-control"
+											name="address" value="${fn:escapeXml(param.address)}">
+										<br> <span class="error" id="saddress${count}">${sessionScope.address}</span>
 										<div class="row">
 											<div class="col-md-6">
 												<label for="city_0_0" class="col-form-label text-md-left"
 													data-pattern-text="City +=1:">City :</label> <input
-													type="text" id="user_0_city" class="form-control"
-													data-pattern-id="user_++_city" name="city" />
+													type="text" id="user_${count}_city" class="form-control"
+													name="city" value="${fn:escapeXml(param.city)}" /> <br>
+												<span class="error" id="scity${count}">${sessionScope.city}</span>
 											</div>
 											<div class="col-md-6">
 												<label for="state_0_0" class="col-form-label text-md-left"
 													data-pattern-text="State +=1:">State :</label> <input
-													type="text" id="user_0_state" class="form-control"
-													data-pattern-id="user_++_state" name="state" />
+													type="text" id="user_${count}_state" class="form-control"
+													name="state" value="${fn:escapeXml(param.state)}" /> <br>
+												<span class="error" id="sstate${count}">${sessionScope.state}</span>
 											</div>
 										</div>
 										<label for="country_0_0" class="col-form-label text-md-left"
 											data-pattern-text="Country +=1:">Country :</label> <input
-											type="text" id="user_0_country" class="form-control"
-											data-pattern-id="user_++_country" name="country" /> <br />
-
-
+											type="text" id="user_${count}_country" class="form-control"
+											name="country" value="${fn:escapeXml(param.country)}" /> <br>
+										<span class="error" id="scountry${count}">${sessionScope.country}</span>
+										<br />
 										<div class="text-center">
 											<button type="button" class="r-btnRemove btn btn-danger"
 												id="r-BTNREMOVE">
@@ -258,18 +262,18 @@
 											</button>
 										</div>
 
-
 										<input type="hidden" id="custId" name="addID" value="555">
 										<input type="hidden" name="id" value="${user.id}">
-
+										<input type="hidden" id="count" value="${count}">
+										<c:set var="count" value="${count+1}" scope="page" />
+										
 									</div>
-									<div class="dynamicAddingAddress"></div>
 								</div>
 							</c:if>
 
 							<c:if test="${sessionScope.currentUser != null}">
 
-
+								<c:set var="count" value="1" scope="page" />
 								<div id="example1" class="form-group">
 									<div class="text-center">
 										<button type="button" class="r-btnAdd btn btn-success"
@@ -279,9 +283,9 @@
 									</div>
 
 
-									<%-- 		<c:set var="count" value="0" scope="page" />
-									${userAddress}
-							 --%>
+									
+									<%-- ${userAddress} --%>
+
 									<c:forEach var="list" items="${userAddress}">
 										<%-- <c:if test="${fn:length(list) gt 0}"> --%>
 
@@ -289,33 +293,37 @@
 
 											<label for="address_0_0" class="col-form-label text-md-left"
 												data-pattern-text="Address +=1:">Address :</label> <input
-												type="text" id="user_0_address" class="form-control"
+												type="text" id="user_${count}_address" class="form-control"
 												data-pattern-id="user_++_address" name="address"
 												value="${empty list[0] ? 'address':list[0]}" />
+												<br> <span class="error" id="saddress${count}">${sessionScope.address}</span>
 											<!-- </textarea> -->
 
 											<div class="row">
 												<div class="col-md-6">
 													<label for="city_0_0" class="col-form-label text-md-left"
 														data-pattern-text="City +=1:">City :</label> <input
-														type="text" id="user_0_city" class="form-control"
+														type="text" id="user_${count}_city" class="form-control"
 														data-pattern-id="user_++_city" name="city"
 														value="${empty list[1] ? 'city' : list[1]}" />
+														<br> <span class="error" id="scity${count}">${sessionScope.city}</span>
 												</div>
 												<div class="col-md-6">
 													<label for="state_0_0" class="col-form-label text-md-left"
 														data-pattern-text="State +=1:">State :</label> <input
-														type="text" id="user_0_state" class="form-control"
+														type="text" id="user_${count}_state" class="form-control"
 														data-pattern-id="user_++_state" name="state"
 														value="${list[2]}" />
+														<br> <span class="error" id="sstate${count}">${sessionScope.state}</span>
 												</div>
 											</div>
 											<label for="country_0_0" class="col-form-label text-md-left"
 												data-pattern-text="Country +=1:">Country :</label> <input
-												type="text" id="user_0_country" class="form-control"
+												type="text" id="user_${count}_country" class="form-control"
 												data-pattern-id="user_++_country" name="country"
 												value="${list[3]}" /> <br />
-
+												<span class="error" id="scountry${count}">${sessionScope.country}</span>
+												<br> 
 											<div class="text-center">
 												<button type="button" class="r-btnRemove btn btn-danger"
 													id="r-BTNREMOVE" name="deleteAddress" value="remove"
@@ -328,10 +336,10 @@
 												name="addID" value="${list[4]}" />
 
 										</div>
-										<%-- <c:set var="count" value="${count+1}" scope="page" /> --%>
+										<c:set var="count" value="${count+1}" scope="page" />
 										<%-- </c:if> --%>
 									</c:forEach>
-									<div class="dynamicAddingAddress"></div>
+									<input type="hidden" id="count" value="${count}">
 									<input type="hidden" name="id" id="id_"
 										data-pattern-id="id_+=1" value="${user.id}" />
 								</div>
@@ -342,27 +350,28 @@
 							<div class="form-group">
 								<label for="pwd">Password : </label> <input type="Password"
 									class="form-control" name="pwd" id="pwd"
-									value="<c:out value="${user.password}"/>"
+									value="<c:out value="${empty user.password ? fn:escapeXml(param.pwd) :user.password}"/>"
 									placeholder="Enter Password" onblur="inputpassword()"
 									onfocus="resetPassword()"><br> <span class="error"
-									id="spwd"></span>
+									id="spwd">${sessionScope.password}</span>
 							</div>
 
 							<div class="form-group">
 								<label for="cpwd">Confirm Password : </label> <input
 									type="Password" class="form-control" name="cpwd" id="cpwd"
-									value="<c:out value="${user.password}"/>"
+									value="<c:out value="${empty user.password ? fn:escapeXml(param.cpwd) : user.password}"/>"
 									placeholder="Enter Confirm Password" onblur="inputcpassword()"
 									onfocus="resetConfirmPassword()"><br> <span
-									class="error" id="scpwd"></span>
+									class="error" id="scpwd">${sessionScope.cpassword}</span>
 							</div>
 
 							<div class="form-group">
 								<label for="img">Upload Profile : </label><br>
 								<div class="d-flex">
 									<input type="file" class="form-control-file" name="pic"
-										id="pic" accept="image/*"
+										id="pic" accept="image/*" value="${user.image}"
 										onchange="inputFile() ; readURL(this)" onfocus="resetFile()">
+									<input type="hidden" value="${user.image}" id="userImage">
 									<img id="preview" class="rounded float-right"
 										<c:if test="${user.image != null}">src="image/${user.image}"</c:if>><br>
 								</div>
@@ -371,8 +380,7 @@
 
 							<button type="submit" name="register" id="register"
 								value="${empty user ? 'SignUp' : 'Update'}"
-								class="btn btn-outline-light btn-lg login-btn-width login-bg"
-								disabled>${empty user ? 'SignUp' : 'Update'}</button>
+								class="btn btn-outline-light btn-lg login-btn-width login-bg" onclick='return validate(${count-1});'>${empty user ? 'SignUp' : 'Update'}</button>
 
 							<br>
 

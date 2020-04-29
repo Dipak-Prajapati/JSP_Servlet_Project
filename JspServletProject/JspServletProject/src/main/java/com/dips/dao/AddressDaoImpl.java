@@ -245,34 +245,51 @@ public class AddressDaoImpl implements AddressDao {
 				System.out.println("deleteAddress() in address_id : " + result.getInt("address_id"));
 				delId.add(result.getInt("address_id"));
 			}
-			//int[] addId = new int[addressId.length];
+			// int[] addId = new int[addressId.length];
 			List<Integer> addId = new ArrayList<Integer>();
-			for(int k = 0; k < addressId.length; k++)
-			{
-				if(addressId[k] != 555)
-				{
+			for (int k = 0; k < addressId.length; k++) {
+				if (addressId[k] != 555) {
 					addId.add(addressId[k]);
 				}
 			}
-			for (int i = 0; i < delId.size(); i++) {
-				for (int j = 0; j < addId.size(); j++) {
-
-					if (delId.get(i) == addId.get(j)) {
-						System.out.println("same id : addId[" + j + "] :" + addId.get(j) + " sdelId.get(" + i + ")"
-								+ delId.get(i));
-					}
-
-					else {
-						System.out.println("Different id : addId[" + j + "] :" + addId.get(j) + " sdelId.get(" + i
-								+ ")" + delId.get(i));
-						ps = con.prepareStatement("delete from address where address_id = ?");
-						ps.setInt(1, delId.get(i));
-						ps.executeUpdate();
-						System.out.println("Delete Query Performed");
-					}
-				}
+			System.out.println("addId size" + addId.size());
+			if (addId.size() == 0) {
+				ps = con.prepareStatement("delete from address where user_id = ?");
+				ps.setInt(1, userId);
+				ps.executeUpdate();
+				System.out.println("Delete Query Performed ........");
 			}
 
+			delId.removeAll(addId);
+			System.out.println("delId List:"+delId);
+
+			for (int i = 0; i < delId.size(); i++) {
+				System.out.println("delId :"+delId.get(i));
+				ps = con.prepareStatement("delete from address where address_id = ?");
+				ps.setInt(1, delId.get(i));
+				ps.executeUpdate();
+				System.out.println("Delete Query Performed");
+			}
+			/*
+			 * for (int i = 0; i < delId.size(); i++) { for (int j = 0; j < addId.size();
+			 * j++) {
+			 * 
+			 * if (delId.get(i) == addId.get(j)) { System.out.println("same id : addId[" + j
+			 * + "] :" + addId.get(j) + " sdelId.get(" + i + ")" + delId.get(i));
+			 * delId.remove(new Integer(i)); addId.remove(new Integer(j));
+			 * 
+			 * 
+			 * System.out.println("same id removed: addId[" + j + "] :" + addId.get(j) +
+			 * " sdelId.get(" + i + ")" + delId.get(i));
+			 * 
+			 * //continue; }
+			 * 
+			 * else { System.out.println("Different id : addId[" + j + "] :" + addId.get(j)
+			 * + " sdelId.get(" + i + ")" + delId.get(i)); ps =
+			 * con.prepareStatement("delete from address where address_id = ?");
+			 * ps.setInt(1, delId.get(i)); ps.executeUpdate();
+			 * System.out.println("Delete Query Performed"); } } }
+			 */
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
