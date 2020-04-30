@@ -171,12 +171,11 @@ public class RegisterController extends HttpServlet {
 			addressService = new AddressServiceImpl();
 			System.out.println("Controller in registerPojo : " + registerPojo);
 
-			/*
-			 * serviceRegister.insertData(registerPojo);
-			 * System.out.print("Add User Successfully");
-			 * addressService.insertAddress(addressPojo);
-			 * System.out.print("Add address Successfully");
-			 */
+			serviceRegister.insertData(registerPojo);
+			System.out.print("Add User Successfully");
+			addressService.insertAddress(addressPojo);
+			System.out.print("Add address Successfully");
+
 			response.sendRedirect("index.jsp");
 		}
 		// if (session.getAttribute("currentUser") != null) {
@@ -298,7 +297,7 @@ public class RegisterController extends HttpServlet {
 			serviceRegister = new UserServiceImpl();
 			addressService = new AddressServiceImpl();
 			System.out.println("Controller in registerPojo update code: " + registerPojo);
-		/*	serviceRegister.updateData(registerPojo);
+			serviceRegister.updateData(registerPojo);
 			registerPojo = serviceRegister.login(email, password);
 
 			addressService.updateData(addressPojo);
@@ -319,7 +318,7 @@ public class RegisterController extends HttpServlet {
 			} else {
 				response.sendRedirect("profile.jsp");
 			}
-		*/
+
 		}
 	}
 }

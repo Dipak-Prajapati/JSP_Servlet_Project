@@ -265,7 +265,7 @@
 										<input type="hidden" id="custId" name="addID" value="555">
 										<input type="hidden" name="id" value="${user.id}">
 										<input type="hidden" id="count" value="${count}">
-										<c:set var="count" value="${count+1}" scope="page" />
+										<%-- <c:set var="count" value="${count+1}" scope="page" /> --%>
 										
 									</div>
 								</div>
@@ -273,7 +273,7 @@
 
 							<c:if test="${sessionScope.currentUser != null}">
 
-								<c:set var="count" value="0" scope="page" />
+								<c:set var="count" value="1" scope="page" />
 								<div id="example1" class="form-group">
 									<div class="text-center">
 										<button type="button" class="r-btnAdd btn btn-success"
@@ -339,7 +339,7 @@
 										<c:set var="count" value="${count+1}" scope="page" />
 										<%-- </c:if> --%>
 									</c:forEach>
-									<input type="hidden" id="count" value="${count}">
+									<input type="hidden" id="count" value="${count-1}">
 									<input type="hidden" name="id" id="id_"
 										data-pattern-id="id_+=1" value="${user.id}" />
 								</div>
@@ -380,7 +380,7 @@
 
 							<button type="submit" name="register" id="register"
 								value="${empty user ? 'SignUp' : 'Update'}"
-								class="btn btn-outline-light btn-lg login-btn-width login-bg" onclick='return validate(${count});'>${empty user ? 'SignUp' : 'Update'}</button>
+								class="btn btn-outline-light btn-lg login-btn-width login-bg" onclick='return validate();'>${empty user ? 'SignUp' : 'Update'}</button>
 
 							<br>
 

@@ -17,8 +17,16 @@ var xFile, xFirst, xMiddle, xLast, xEmail, xDob, xMobile, xGender, xLanguage, xH
 xFile = xFirst = xMiddle = xLast = xEmail = xDob = xMobile = xGender = xLanguage = xHobbie = xPassword = xCPassword = false;
 // xAddress=
 
-function validate(id) {
-	for (var count = 1; count <= id; count++) {
+function validate() {
+	//var id = document.getElementById('count').value;
+	/*var location = $( "#repeater" ).last();
+	alert(location);
+	var idd = $(location).('#count').val();
+	alert(idd);*/
+	//var length = document.getElementById('#repeater').length + document.getElementById('#example1').length;
+	var length = $('[id=repeater]').length;
+	//alert(length);
+	for (var count = 1; count <= length; count++) {
 
 		if (count == 1) {
 
