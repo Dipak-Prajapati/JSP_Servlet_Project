@@ -98,7 +98,8 @@ public class RegisterController extends HttpServlet {
 			System.out.println("immm :" + immm);
 			String imageName;
 			if (immm == null) {
-				imageName = "profile.jpg";
+				imageName = "profileAvatar.jpeg";
+				// imageName = "profile.jpg";
 			} else {
 
 				Part part = request.getPart("pic");
@@ -170,11 +171,12 @@ public class RegisterController extends HttpServlet {
 			addressService = new AddressServiceImpl();
 			System.out.println("Controller in registerPojo : " + registerPojo);
 
-			serviceRegister.insertData(registerPojo);
-			System.out.print("Add User Successfully");
-			addressService.insertAddress(addressPojo);
-			System.out.print("Add address Successfully");
-
+			/*
+			 * serviceRegister.insertData(registerPojo);
+			 * System.out.print("Add User Successfully");
+			 * addressService.insertAddress(addressPojo);
+			 * System.out.print("Add address Successfully");
+			 */
 			response.sendRedirect("index.jsp");
 		}
 		// if (session.getAttribute("currentUser") != null) {
@@ -221,18 +223,17 @@ public class RegisterController extends HttpServlet {
 			 * }
 			 */
 			String password = request.getParameter("pwd");
-			String immm = request.getParameter("pic");
-			System.out.println("immm :" + immm);
+
 			String imageName;
-			if (immm == null) {
+			Part part = request.getPart("pic");
+			System.out.println("part :" + part);
+			imageName = part.getSubmittedFileName();
+			System.out.println("imageName :" + imageName);
+
+			if (imageName == "") {
 				imageName = request.getParameter("userImage");
+				System.out.println("Blank Image Name : " + imageName);
 			} else {
-
-				Part part = request.getPart("pic");
-				System.out.println("part :" + part);
-				imageName = part.getSubmittedFileName();
-				System.out.println("imageName :" + imageName);
-
 				InputStream is = part.getInputStream();
 				System.out.println("image InputStream :" + is);
 				byte[] data = new byte[is.available()];
@@ -297,13 +298,9 @@ public class RegisterController extends HttpServlet {
 			serviceRegister = new UserServiceImpl();
 			addressService = new AddressServiceImpl();
 			System.out.println("Controller in registerPojo update code: " + registerPojo);
-			serviceRegister.updateData(registerPojo);
+		/*	serviceRegister.updateData(registerPojo);
 			registerPojo = serviceRegister.login(email, password);
 
-			/*
-			 * if(request.getParameter("operation").contentEquals("newAddress")) {
-			 * addressService.insertAddress(addressPojo); }
-			 */
 			addressService.updateData(addressPojo);
 
 			List<List<Object>> profile = new ArrayList<List<Object>>();
@@ -322,7 +319,7 @@ public class RegisterController extends HttpServlet {
 			} else {
 				response.sendRedirect("profile.jsp");
 			}
-
+		*/
 		}
 	}
 }

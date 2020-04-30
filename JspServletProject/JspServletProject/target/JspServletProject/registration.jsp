@@ -231,28 +231,28 @@
 										<label for="address_0_0" class="col-form-label text-md-left"
 											data-pattern-text="Address +=1:">Address :</label> <input
 											type="text" id="user_${count}_address" class="form-control"
-											name="address" value="${fn:escapeXml(param.address)}">
+											name="address" value="${fn:escapeXml(param.address)}" onblur="inputaddress(${count})" onfocus="resetAddress(${count})"/>
 										<br> <span class="error" id="saddress${count}">${sessionScope.address}</span>
 										<div class="row">
 											<div class="col-md-6">
 												<label for="city_0_0" class="col-form-label text-md-left"
 													data-pattern-text="City +=1:">City :</label> <input
 													type="text" id="user_${count}_city" class="form-control"
-													name="city" value="${fn:escapeXml(param.city)}" /> <br>
+													name="city" value="${fn:escapeXml(param.city)}" onblur="inputcity(${count})" onfocus="resetCity(${count})"/> <br>
 												<span class="error" id="scity${count}">${sessionScope.city}</span>
 											</div>
 											<div class="col-md-6">
 												<label for="state_0_0" class="col-form-label text-md-left"
 													data-pattern-text="State +=1:">State :</label> <input
 													type="text" id="user_${count}_state" class="form-control"
-													name="state" value="${fn:escapeXml(param.state)}" /> <br>
+													name="state" value="${fn:escapeXml(param.state)}" onblur="inputstate(${count})" onfocus="resetState(${count})"/> <br>
 												<span class="error" id="sstate${count}">${sessionScope.state}</span>
 											</div>
 										</div>
 										<label for="country_0_0" class="col-form-label text-md-left"
 											data-pattern-text="Country +=1:">Country :</label> <input
 											type="text" id="user_${count}_country" class="form-control"
-											name="country" value="${fn:escapeXml(param.country)}" /> <br>
+											name="country" value="${fn:escapeXml(param.country)}" onblur="inputcountry(${count})" onfocus="resetCountry(${count})"/> <br>
 										<span class="error" id="scountry${count}">${sessionScope.country}</span>
 										<br />
 										<div class="text-center">
@@ -273,7 +273,7 @@
 
 							<c:if test="${sessionScope.currentUser != null}">
 
-								<c:set var="count" value="1" scope="page" />
+								<c:set var="count" value="0" scope="page" />
 								<div id="example1" class="form-group">
 									<div class="text-center">
 										<button type="button" class="r-btnAdd btn btn-success"
@@ -295,7 +295,7 @@
 												data-pattern-text="Address +=1:">Address :</label> <input
 												type="text" id="user_${count}_address" class="form-control"
 												data-pattern-id="user_++_address" name="address"
-												value="${empty list[0] ? 'address':list[0]}" />
+												value="${list[0]}" onblur="inputaddress(${count})" onfocus="resetAddress(${count})"/>
 												<br> <span class="error" id="saddress${count}">${sessionScope.address}</span>
 											<!-- </textarea> -->
 
@@ -305,7 +305,7 @@
 														data-pattern-text="City +=1:">City :</label> <input
 														type="text" id="user_${count}_city" class="form-control"
 														data-pattern-id="user_++_city" name="city"
-														value="${empty list[1] ? 'city' : list[1]}" />
+														value="${list[1]}" onblur="inputcity(${count})" onfocus="resetCity(${count})"/>
 														<br> <span class="error" id="scity${count}">${sessionScope.city}</span>
 												</div>
 												<div class="col-md-6">
@@ -313,7 +313,7 @@
 														data-pattern-text="State +=1:">State :</label> <input
 														type="text" id="user_${count}_state" class="form-control"
 														data-pattern-id="user_++_state" name="state"
-														value="${list[2]}" />
+														value="${list[2]}" onblur="inputstate(${count})" onfocus="resetState(${count})"/>
 														<br> <span class="error" id="sstate${count}">${sessionScope.state}</span>
 												</div>
 											</div>
@@ -321,7 +321,7 @@
 												data-pattern-text="Country +=1:">Country :</label> <input
 												type="text" id="user_${count}_country" class="form-control"
 												data-pattern-id="user_++_country" name="country"
-												value="${list[3]}" /> <br />
+												value="${list[3]}" onblur="inputcountry(${count})" onfocus="resetCountry(${count})"/> <br />
 												<span class="error" id="scountry${count}">${sessionScope.country}</span>
 												<br> 
 											<div class="text-center">
@@ -371,7 +371,7 @@
 									<input type="file" class="form-control-file" name="pic"
 										id="pic" accept="image/*" value="${user.image}"
 										onchange="inputFile() ; readURL(this)" onfocus="resetFile()">
-									<input type="hidden" value="${user.image}" id="userImage">
+									<input type="hidden" value="${user.image}" id="userImage" name="userImage">
 									<img id="preview" class="rounded float-right"
 										<c:if test="${user.image != null}">src="image/${user.image}"</c:if>><br>
 								</div>
@@ -380,7 +380,7 @@
 
 							<button type="submit" name="register" id="register"
 								value="${empty user ? 'SignUp' : 'Update'}"
-								class="btn btn-outline-light btn-lg login-btn-width login-bg" onclick='return validate(${count-1});'>${empty user ? 'SignUp' : 'Update'}</button>
+								class="btn btn-outline-light btn-lg login-btn-width login-bg" onclick='return validate(${count});'>${empty user ? 'SignUp' : 'Update'}</button>
 
 							<br>
 

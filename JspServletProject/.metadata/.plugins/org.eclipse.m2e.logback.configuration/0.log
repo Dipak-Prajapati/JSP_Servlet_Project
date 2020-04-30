@@ -8849,3 +8849,313 @@ org.eclipse.core.runtime.CoreException: Could not resolve artifact com.googlecod
 2020-04-29 18:17:37,259 [Worker-128: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
 2020-04-29 18:17:37,260 [Worker-128: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\INEXTURE\JspServletProject\JspServletProject\src\test\resources
 2020-04-29 18:31:52,927 [Worker-2: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2020-04-29 18:46:29,660 [Worker-3: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2020-04-29 18:49:07,378 [Worker-11: Importing Maven projects] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.project:JspServletProject:0.0.1-SNAPSHOT @ D:\INEXTURE\JspServletProject\JspServletProject\pom.xml.
+2020-04-29 18:49:17,461 [Worker-11: Importing Maven projects] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /JspServletProject/src/main/java
+2020-04-29 18:49:17,462 [Worker-11: Importing Maven projects] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /JspServletProject/src/test/java
+2020-04-29 18:49:17,860 [Worker-11: Importing Maven projects] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Imported and configured 1 project(s) in 86 sec
+2020-04-29 18:49:35,442 [Worker-0: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-04-29 18:49:35,446 [Worker-0: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\INEXTURE\JspServletProject\JspServletProject\src\main\resources
+2020-04-29 18:49:35,452 [Worker-0: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-04-29 18:49:35,455 [Worker-0: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\INEXTURE\JspServletProject\JspServletProject\src\test\resources
+2020-04-29 18:52:33,728 [Worker-7: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-04-29 18:52:33,729 [Worker-7: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\INEXTURE\JspServletProject\JspServletProject\src\main\resources
+2020-04-29 18:52:33,733 [Worker-7: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-04-29 18:52:33,733 [Worker-7: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\INEXTURE\JspServletProject\JspServletProject\src\test\resources
+2020-04-29 18:54:34,895 [Worker-10: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-04-29 18:54:34,895 [Worker-10: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\INEXTURE\JspServletProject\JspServletProject\src\main\resources
+2020-04-29 18:54:34,900 [Worker-10: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-04-29 18:54:34,901 [Worker-10: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\INEXTURE\JspServletProject\JspServletProject\src\test\resources
+2020-04-29 18:54:52,847 [Worker-2: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-04-29 18:54:52,850 [Worker-2: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\INEXTURE\JspServletProject\JspServletProject\src\main\resources
+2020-04-29 18:54:52,852 [Worker-2: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-04-29 18:54:52,852 [Worker-2: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\INEXTURE\JspServletProject\JspServletProject\src\test\resources
+2020-04-29 18:55:42,071 [Worker-5: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-04-29 18:55:42,071 [Worker-5: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\INEXTURE\JspServletProject\JspServletProject\src\main\resources
+2020-04-29 18:55:42,075 [Worker-5: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-04-29 18:55:42,075 [Worker-5: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\INEXTURE\JspServletProject\JspServletProject\src\test\resources
+2020-04-29 18:57:37,315 [Worker-12: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-04-29 18:57:37,316 [Worker-12: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\INEXTURE\JspServletProject\JspServletProject\src\main\resources
+2020-04-29 18:57:37,318 [Worker-12: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-04-29 18:57:37,319 [Worker-12: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\INEXTURE\JspServletProject\JspServletProject\src\test\resources
+2020-04-29 18:59:02,533 [Worker-0: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-04-29 18:59:02,533 [Worker-0: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\INEXTURE\JspServletProject\JspServletProject\src\main\resources
+2020-04-29 18:59:02,535 [Worker-0: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-04-29 18:59:02,535 [Worker-0: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\INEXTURE\JspServletProject\JspServletProject\src\test\resources
+2020-04-29 18:59:06,645 [Worker-3: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-04-29 18:59:06,645 [Worker-3: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\INEXTURE\JspServletProject\JspServletProject\src\main\resources
+2020-04-29 18:59:06,651 [Worker-3: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-04-29 18:59:06,651 [Worker-3: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\INEXTURE\JspServletProject\JspServletProject\src\test\resources
+2020-04-29 18:59:52,981 [Worker-2: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-04-29 18:59:52,982 [Worker-2: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\INEXTURE\JspServletProject\JspServletProject\src\main\resources
+2020-04-29 18:59:52,984 [Worker-2: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-04-29 18:59:52,985 [Worker-2: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\INEXTURE\JspServletProject\JspServletProject\src\test\resources
+2020-04-29 19:11:52,398 [Worker-0: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-04-29 19:11:52,398 [Worker-0: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\INEXTURE\JspServletProject\JspServletProject\src\main\resources
+2020-04-29 19:11:52,400 [Worker-0: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-04-29 19:11:52,401 [Worker-0: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\INEXTURE\JspServletProject\JspServletProject\src\test\resources
+2020-04-29 19:31:34,160 [Worker-0: Importing Maven projects] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.project:JspServletProject:0.0.1-SNAPSHOT @ D:\INEXTURE\JspServletProject\JspServletProject\pom.xml.
+2020-04-29 19:31:37,885 [Worker-0: Importing Maven projects] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /JspServletProject/src/main/java
+2020-04-29 19:31:37,886 [Worker-0: Importing Maven projects] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /JspServletProject/src/test/java
+2020-04-29 19:31:38,031 [Worker-0: Importing Maven projects] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Imported and configured 1 project(s) in 24 sec
+2020-04-29 19:31:44,699 [Worker-22: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-04-29 19:31:44,700 [Worker-22: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\INEXTURE\JspServletProject\JspServletProject\src\main\resources
+2020-04-29 19:31:44,703 [Worker-22: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-04-29 19:31:44,703 [Worker-22: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\INEXTURE\JspServletProject\JspServletProject\src\test\resources
+2020-04-29 19:38:51,272 [Worker-0: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-04-29 19:38:51,272 [Worker-0: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\INEXTURE\JspServletProject\JspServletProject\src\main\resources
+2020-04-29 19:38:51,274 [Worker-0: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-04-29 19:38:51,275 [Worker-0: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\INEXTURE\JspServletProject\JspServletProject\src\test\resources
+2020-04-29 19:39:57,076 [Worker-14: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-04-29 19:39:57,077 [Worker-14: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\INEXTURE\JspServletProject\JspServletProject\src\main\resources
+2020-04-29 19:39:57,080 [Worker-14: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-04-29 19:39:57,081 [Worker-14: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\INEXTURE\JspServletProject\JspServletProject\src\test\resources
+2020-04-29 19:44:23,869 [Worker-23: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-04-29 19:44:23,870 [Worker-23: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\INEXTURE\JspServletProject\JspServletProject\src\main\resources
+2020-04-29 19:44:23,873 [Worker-23: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-04-29 19:44:23,874 [Worker-23: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\INEXTURE\JspServletProject\JspServletProject\src\test\resources
+2020-04-29 19:47:47,227 [Worker-27: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-04-29 19:47:47,228 [Worker-27: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\INEXTURE\JspServletProject\JspServletProject\src\main\resources
+2020-04-29 19:47:47,231 [Worker-27: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-04-29 19:47:47,232 [Worker-27: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\INEXTURE\JspServletProject\JspServletProject\src\test\resources
+2020-04-29 19:48:03,619 [Worker-0: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-04-29 19:48:03,619 [Worker-0: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\INEXTURE\JspServletProject\JspServletProject\src\main\resources
+2020-04-29 19:48:03,623 [Worker-0: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-04-29 19:48:03,624 [Worker-0: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\INEXTURE\JspServletProject\JspServletProject\src\test\resources
+2020-04-29 19:49:43,720 [Worker-27: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-04-29 19:49:43,720 [Worker-27: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\INEXTURE\JspServletProject\JspServletProject\src\main\resources
+2020-04-29 19:49:43,723 [Worker-27: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-04-29 19:49:43,723 [Worker-27: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\INEXTURE\JspServletProject\JspServletProject\src\test\resources
+2020-04-29 19:50:11,301 [Worker-27: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-04-29 19:50:11,301 [Worker-27: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\INEXTURE\JspServletProject\JspServletProject\src\main\resources
+2020-04-29 19:50:11,306 [Worker-27: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-04-29 19:50:11,306 [Worker-27: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\INEXTURE\JspServletProject\JspServletProject\src\test\resources
+2020-04-29 19:52:32,373 [Worker-27: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-04-29 19:52:32,374 [Worker-27: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\INEXTURE\JspServletProject\JspServletProject\src\main\resources
+2020-04-29 19:52:32,376 [Worker-27: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-04-29 19:52:32,376 [Worker-27: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\INEXTURE\JspServletProject\JspServletProject\src\test\resources
+2020-04-29 19:57:55,462 [Worker-23: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-04-29 19:57:55,462 [Worker-23: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\INEXTURE\JspServletProject\JspServletProject\src\main\resources
+2020-04-29 19:57:55,464 [Worker-23: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-04-29 19:57:55,464 [Worker-23: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\INEXTURE\JspServletProject\JspServletProject\src\test\resources
+2020-04-29 20:02:16,921 [Worker-27: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-04-29 20:02:16,922 [Worker-27: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\INEXTURE\JspServletProject\JspServletProject\src\main\resources
+2020-04-29 20:02:16,924 [Worker-27: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-04-29 20:02:16,924 [Worker-27: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\INEXTURE\JspServletProject\JspServletProject\src\test\resources
+2020-04-29 20:09:00,331 [Worker-36: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-04-29 20:09:00,332 [Worker-36: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\INEXTURE\JspServletProject\JspServletProject\src\main\resources
+2020-04-29 20:09:00,335 [Worker-36: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-04-29 20:09:00,335 [Worker-36: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\INEXTURE\JspServletProject\JspServletProject\src\test\resources
+2020-04-29 20:18:06,462 [Worker-33: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-04-29 20:18:06,462 [Worker-33: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\INEXTURE\JspServletProject\JspServletProject\src\main\resources
+2020-04-29 20:18:06,464 [Worker-33: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-04-29 20:18:06,465 [Worker-33: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\INEXTURE\JspServletProject\JspServletProject\src\test\resources
+2020-04-29 20:30:31,529 [Worker-41: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-04-29 20:30:31,530 [Worker-41: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\INEXTURE\JspServletProject\JspServletProject\src\main\resources
+2020-04-29 20:30:31,532 [Worker-41: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-04-29 20:30:31,532 [Worker-41: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\INEXTURE\JspServletProject\JspServletProject\src\test\resources
+2020-04-29 20:37:41,510 [Worker-43: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-04-29 20:37:41,510 [Worker-43: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\INEXTURE\JspServletProject\JspServletProject\src\main\resources
+2020-04-29 20:37:41,512 [Worker-43: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-04-29 20:37:41,512 [Worker-43: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\INEXTURE\JspServletProject\JspServletProject\src\test\resources
+2020-04-29 23:40:07,697 [Worker-53: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-04-29 23:40:07,959 [Worker-53: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\INEXTURE\JspServletProject\JspServletProject\src\main\resources
+2020-04-29 23:40:08,124 [Worker-53: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-04-29 23:40:08,125 [Worker-53: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\INEXTURE\JspServletProject\JspServletProject\src\test\resources
+2020-04-29 23:51:10,014 [Worker-55: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-04-29 23:51:10,014 [Worker-55: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\INEXTURE\JspServletProject\JspServletProject\src\main\resources
+2020-04-29 23:51:10,052 [Worker-55: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-04-29 23:51:10,052 [Worker-55: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\INEXTURE\JspServletProject\JspServletProject\src\test\resources
+2020-04-29 23:51:36,345 [Worker-56: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-04-29 23:51:36,345 [Worker-56: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\INEXTURE\JspServletProject\JspServletProject\src\main\resources
+2020-04-29 23:51:36,347 [Worker-56: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-04-29 23:51:36,348 [Worker-56: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\INEXTURE\JspServletProject\JspServletProject\src\test\resources
+2020-04-29 23:59:23,897 [Worker-54: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-04-29 23:59:23,898 [Worker-54: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\INEXTURE\JspServletProject\JspServletProject\src\main\resources
+2020-04-29 23:59:23,904 [Worker-54: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-04-29 23:59:23,905 [Worker-54: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\INEXTURE\JspServletProject\JspServletProject\src\test\resources
+2020-04-29 23:59:56,130 [Worker-56: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-04-29 23:59:56,130 [Worker-56: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\INEXTURE\JspServletProject\JspServletProject\src\main\resources
+2020-04-29 23:59:56,134 [Worker-56: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-04-29 23:59:56,135 [Worker-56: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\INEXTURE\JspServletProject\JspServletProject\src\test\resources
+2020-04-30 00:10:05,452 [Worker-57: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-04-30 00:10:05,453 [Worker-57: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\INEXTURE\JspServletProject\JspServletProject\src\main\resources
+2020-04-30 00:10:05,454 [Worker-57: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-04-30 00:10:05,455 [Worker-57: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\INEXTURE\JspServletProject\JspServletProject\src\test\resources
+2020-04-30 00:28:18,213 [Worker-66: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-04-30 00:28:18,214 [Worker-66: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\INEXTURE\JspServletProject\JspServletProject\src\main\resources
+2020-04-30 00:28:18,219 [Worker-66: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-04-30 00:28:18,220 [Worker-66: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\INEXTURE\JspServletProject\JspServletProject\src\test\resources
+2020-04-30 00:52:18,688 [Worker-70: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-04-30 00:52:18,748 [Worker-70: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\INEXTURE\JspServletProject\JspServletProject\src\main\resources
+2020-04-30 00:52:18,749 [Worker-70: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-04-30 00:52:18,750 [Worker-70: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\INEXTURE\JspServletProject\JspServletProject\src\test\resources
+2020-04-30 01:00:33,620 [Worker-71: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-04-30 01:00:33,620 [Worker-71: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\INEXTURE\JspServletProject\JspServletProject\src\main\resources
+2020-04-30 01:00:33,622 [Worker-71: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-04-30 01:00:33,622 [Worker-71: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\INEXTURE\JspServletProject\JspServletProject\src\test\resources
+2020-04-30 01:01:15,746 [Worker-71: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-04-30 01:01:15,746 [Worker-71: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\INEXTURE\JspServletProject\JspServletProject\src\main\resources
+2020-04-30 01:01:15,748 [Worker-71: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-04-30 01:01:15,748 [Worker-71: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\INEXTURE\JspServletProject\JspServletProject\src\test\resources
+2020-04-30 01:02:02,007 [Worker-73: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-04-30 01:02:02,007 [Worker-73: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\INEXTURE\JspServletProject\JspServletProject\src\main\resources
+2020-04-30 01:02:02,010 [Worker-73: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-04-30 01:02:02,010 [Worker-73: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\INEXTURE\JspServletProject\JspServletProject\src\test\resources
+2020-04-30 01:22:47,786 [Worker-70: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-04-30 01:22:47,842 [Worker-70: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\INEXTURE\JspServletProject\JspServletProject\src\main\resources
+2020-04-30 01:22:47,871 [Worker-70: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-04-30 01:22:47,872 [Worker-70: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\INEXTURE\JspServletProject\JspServletProject\src\test\resources
+2020-04-30 01:23:03,713 [Worker-70: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-04-30 01:23:03,713 [Worker-70: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\INEXTURE\JspServletProject\JspServletProject\src\main\resources
+2020-04-30 01:23:03,715 [Worker-70: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-04-30 01:23:03,716 [Worker-70: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\INEXTURE\JspServletProject\JspServletProject\src\test\resources
+2020-04-30 01:25:46,183 [Worker-77: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-04-30 01:25:46,183 [Worker-77: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\INEXTURE\JspServletProject\JspServletProject\src\main\resources
+2020-04-30 01:25:46,185 [Worker-77: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-04-30 01:25:46,185 [Worker-77: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\INEXTURE\JspServletProject\JspServletProject\src\test\resources
+2020-04-30 10:07:08,823 [Worker-2: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2020-04-30 10:59:55,175 [Worker-21: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-04-30 10:59:55,192 [Worker-21: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\INEXTURE\JspServletProject\JspServletProject\src\main\resources
+2020-04-30 10:59:55,195 [Worker-21: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-04-30 10:59:55,195 [Worker-21: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\INEXTURE\JspServletProject\JspServletProject\src\test\resources
+2020-04-30 11:05:33,013 [Worker-22: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-04-30 11:05:33,013 [Worker-22: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\INEXTURE\JspServletProject\JspServletProject\src\main\resources
+2020-04-30 11:05:33,016 [Worker-22: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-04-30 11:05:33,016 [Worker-22: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\INEXTURE\JspServletProject\JspServletProject\src\test\resources
+2020-04-30 11:20:28,464 [Worker-22: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-04-30 11:20:28,465 [Worker-22: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\INEXTURE\JspServletProject\JspServletProject\src\main\resources
+2020-04-30 11:20:28,469 [Worker-22: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-04-30 11:20:28,469 [Worker-22: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\INEXTURE\JspServletProject\JspServletProject\src\test\resources
+2020-04-30 11:24:10,897 [Worker-31: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-04-30 11:24:10,897 [Worker-31: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\INEXTURE\JspServletProject\JspServletProject\src\main\resources
+2020-04-30 11:24:10,900 [Worker-31: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-04-30 11:24:10,900 [Worker-31: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\INEXTURE\JspServletProject\JspServletProject\src\test\resources
+2020-04-30 11:24:34,717 [Worker-31: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-04-30 11:24:34,718 [Worker-31: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\INEXTURE\JspServletProject\JspServletProject\src\main\resources
+2020-04-30 11:24:34,721 [Worker-31: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-04-30 11:24:34,722 [Worker-31: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\INEXTURE\JspServletProject\JspServletProject\src\test\resources
+2020-04-30 11:26:48,119 [Worker-22: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-04-30 11:26:48,119 [Worker-22: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\INEXTURE\JspServletProject\JspServletProject\src\main\resources
+2020-04-30 11:26:48,122 [Worker-22: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-04-30 11:26:48,122 [Worker-22: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\INEXTURE\JspServletProject\JspServletProject\src\test\resources
+2020-04-30 11:34:06,166 [Worker-31: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-04-30 11:34:06,166 [Worker-31: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\INEXTURE\JspServletProject\JspServletProject\src\main\resources
+2020-04-30 11:34:06,168 [Worker-31: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-04-30 11:34:06,169 [Worker-31: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\INEXTURE\JspServletProject\JspServletProject\src\test\resources
+2020-04-30 11:40:02,346 [Worker-38: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-04-30 11:40:02,346 [Worker-38: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\INEXTURE\JspServletProject\JspServletProject\src\main\resources
+2020-04-30 11:40:02,402 [Worker-38: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-04-30 11:40:02,402 [Worker-38: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\INEXTURE\JspServletProject\JspServletProject\src\test\resources
+2020-04-30 12:15:30,658 [Worker-44: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-04-30 12:15:30,659 [Worker-44: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\INEXTURE\JspServletProject\JspServletProject\src\main\resources
+2020-04-30 12:15:30,660 [Worker-44: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-04-30 12:15:30,661 [Worker-44: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\INEXTURE\JspServletProject\JspServletProject\src\test\resources
+2020-04-30 12:16:21,236 [Worker-46: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-04-30 12:16:21,236 [Worker-46: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\INEXTURE\JspServletProject\JspServletProject\src\main\resources
+2020-04-30 12:16:21,239 [Worker-46: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-04-30 12:16:21,240 [Worker-46: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\INEXTURE\JspServletProject\JspServletProject\src\test\resources
+2020-04-30 12:17:16,594 [Worker-44: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-04-30 12:17:16,594 [Worker-44: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\INEXTURE\JspServletProject\JspServletProject\src\main\resources
+2020-04-30 12:17:16,597 [Worker-44: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-04-30 12:17:16,597 [Worker-44: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\INEXTURE\JspServletProject\JspServletProject\src\test\resources
+2020-04-30 12:19:54,964 [Worker-48: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-04-30 12:19:54,964 [Worker-48: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\INEXTURE\JspServletProject\JspServletProject\src\main\resources
+2020-04-30 12:19:54,967 [Worker-48: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-04-30 12:19:54,967 [Worker-48: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\INEXTURE\JspServletProject\JspServletProject\src\test\resources
+2020-04-30 12:20:37,034 [Worker-47: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-04-30 12:20:37,034 [Worker-47: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\INEXTURE\JspServletProject\JspServletProject\src\main\resources
+2020-04-30 12:20:37,039 [Worker-47: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-04-30 12:20:37,039 [Worker-47: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\INEXTURE\JspServletProject\JspServletProject\src\test\resources
+2020-04-30 12:22:28,009 [Worker-48: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-04-30 12:22:28,010 [Worker-48: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\INEXTURE\JspServletProject\JspServletProject\src\main\resources
+2020-04-30 12:22:28,013 [Worker-48: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-04-30 12:22:28,013 [Worker-48: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\INEXTURE\JspServletProject\JspServletProject\src\test\resources
+2020-04-30 14:23:26,063 [Worker-51: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-04-30 14:23:26,074 [Worker-51: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\INEXTURE\JspServletProject\JspServletProject\src\main\resources
+2020-04-30 14:23:26,076 [Worker-51: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-04-30 14:23:26,077 [Worker-51: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\INEXTURE\JspServletProject\JspServletProject\src\test\resources
+2020-04-30 14:27:17,934 [Worker-54: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-04-30 14:27:17,934 [Worker-54: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\INEXTURE\JspServletProject\JspServletProject\src\main\resources
+2020-04-30 14:27:18,108 [Worker-54: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-04-30 14:27:18,154 [Worker-54: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\INEXTURE\JspServletProject\JspServletProject\src\test\resources
+2020-04-30 14:27:28,933 [Worker-52: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-04-30 14:27:28,933 [Worker-52: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\INEXTURE\JspServletProject\JspServletProject\src\main\resources
+2020-04-30 14:27:28,935 [Worker-52: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-04-30 14:27:28,935 [Worker-52: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\INEXTURE\JspServletProject\JspServletProject\src\test\resources
+2020-04-30 14:27:44,256 [Worker-47: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-04-30 14:27:44,256 [Worker-47: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\INEXTURE\JspServletProject\JspServletProject\src\main\resources
+2020-04-30 14:27:44,279 [Worker-47: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-04-30 14:27:44,279 [Worker-47: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\INEXTURE\JspServletProject\JspServletProject\src\test\resources
+2020-04-30 14:28:01,169 [Worker-52: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-04-30 14:28:01,170 [Worker-52: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\INEXTURE\JspServletProject\JspServletProject\src\main\resources
+2020-04-30 14:28:01,172 [Worker-52: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-04-30 14:28:01,172 [Worker-52: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\INEXTURE\JspServletProject\JspServletProject\src\test\resources
+2020-04-30 14:35:58,381 [Worker-56: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-04-30 14:35:58,381 [Worker-56: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\INEXTURE\JspServletProject\JspServletProject\src\main\resources
+2020-04-30 14:35:58,383 [Worker-56: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-04-30 14:35:58,383 [Worker-56: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\INEXTURE\JspServletProject\JspServletProject\src\test\resources
+2020-04-30 14:37:51,233 [Worker-57: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-04-30 14:37:51,233 [Worker-57: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\INEXTURE\JspServletProject\JspServletProject\src\main\resources
+2020-04-30 14:37:51,235 [Worker-57: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-04-30 14:37:51,235 [Worker-57: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\INEXTURE\JspServletProject\JspServletProject\src\test\resources
+2020-04-30 14:38:17,839 [Worker-56: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-04-30 14:38:17,839 [Worker-56: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\INEXTURE\JspServletProject\JspServletProject\src\main\resources
+2020-04-30 14:38:17,886 [Worker-56: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-04-30 14:38:17,887 [Worker-56: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\INEXTURE\JspServletProject\JspServletProject\src\test\resources
+2020-04-30 14:43:42,287 [Worker-47: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-04-30 14:43:42,287 [Worker-47: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\INEXTURE\JspServletProject\JspServletProject\src\main\resources
+2020-04-30 14:43:42,288 [Worker-47: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-04-30 14:43:42,289 [Worker-47: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\INEXTURE\JspServletProject\JspServletProject\src\test\resources
+2020-04-30 14:44:40,871 [Worker-63: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-04-30 14:44:40,871 [Worker-63: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\INEXTURE\JspServletProject\JspServletProject\src\main\resources
+2020-04-30 14:44:40,905 [Worker-63: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-04-30 14:44:40,905 [Worker-63: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\INEXTURE\JspServletProject\JspServletProject\src\test\resources
+2020-04-30 14:46:10,178 [Worker-61: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-04-30 14:46:10,179 [Worker-61: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\INEXTURE\JspServletProject\JspServletProject\src\main\resources
+2020-04-30 14:46:10,181 [Worker-61: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-04-30 14:46:10,181 [Worker-61: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\INEXTURE\JspServletProject\JspServletProject\src\test\resources
+2020-04-30 14:54:09,135 [Worker-60: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-04-30 14:54:09,135 [Worker-60: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\INEXTURE\JspServletProject\JspServletProject\src\main\resources
+2020-04-30 14:54:09,136 [Worker-60: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-04-30 14:54:09,136 [Worker-60: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\INEXTURE\JspServletProject\JspServletProject\src\test\resources
+2020-04-30 14:55:29,965 [Worker-64: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-04-30 14:55:29,966 [Worker-64: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\INEXTURE\JspServletProject\JspServletProject\src\main\resources
+2020-04-30 14:55:29,968 [Worker-64: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-04-30 14:55:29,968 [Worker-64: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\INEXTURE\JspServletProject\JspServletProject\src\test\resources
+2020-04-30 14:58:45,619 [Worker-61: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-04-30 14:58:45,620 [Worker-61: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\INEXTURE\JspServletProject\JspServletProject\src\main\resources
+2020-04-30 14:58:45,622 [Worker-61: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-04-30 14:58:45,622 [Worker-61: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\INEXTURE\JspServletProject\JspServletProject\src\test\resources
+2020-04-30 15:01:39,384 [Worker-65: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-04-30 15:01:39,384 [Worker-65: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\INEXTURE\JspServletProject\JspServletProject\src\main\resources
+2020-04-30 15:01:39,386 [Worker-65: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-04-30 15:01:39,386 [Worker-65: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\INEXTURE\JspServletProject\JspServletProject\src\test\resources
+2020-04-30 15:12:12,031 [Worker-69: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-04-30 15:12:12,031 [Worker-69: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\INEXTURE\JspServletProject\JspServletProject\src\main\resources
+2020-04-30 15:12:12,034 [Worker-69: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-04-30 15:12:12,035 [Worker-69: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\INEXTURE\JspServletProject\JspServletProject\src\test\resources
+2020-04-30 15:24:13,240 [Worker-74: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-04-30 15:24:13,313 [Worker-74: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\INEXTURE\JspServletProject\JspServletProject\src\main\resources
+2020-04-30 15:24:13,367 [Worker-74: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-04-30 15:24:13,367 [Worker-74: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\INEXTURE\JspServletProject\JspServletProject\src\test\resources
+2020-04-30 15:30:16,135 [Worker-78: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-04-30 15:30:16,135 [Worker-78: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\INEXTURE\JspServletProject\JspServletProject\src\main\resources
+2020-04-30 15:30:16,136 [Worker-78: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-04-30 15:30:16,137 [Worker-78: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\INEXTURE\JspServletProject\JspServletProject\src\test\resources
+2020-04-30 15:39:51,933 [Worker-77: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-04-30 15:39:51,934 [Worker-77: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\INEXTURE\JspServletProject\JspServletProject\src\main\resources
+2020-04-30 15:39:51,938 [Worker-77: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-04-30 15:39:51,939 [Worker-77: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\INEXTURE\JspServletProject\JspServletProject\src\test\resources
+2020-04-30 15:57:32,432 [Worker-90: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-04-30 15:57:32,664 [Worker-90: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\INEXTURE\JspServletProject\JspServletProject\src\main\resources
+2020-04-30 15:57:32,666 [Worker-90: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-04-30 15:57:32,666 [Worker-90: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\INEXTURE\JspServletProject\JspServletProject\src\test\resources
+2020-04-30 15:59:53,562 [Worker-90: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-04-30 15:59:53,563 [Worker-90: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\INEXTURE\JspServletProject\JspServletProject\src\main\resources
+2020-04-30 15:59:53,564 [Worker-90: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-04-30 15:59:53,565 [Worker-90: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\INEXTURE\JspServletProject\JspServletProject\src\test\resources
+2020-04-30 16:10:21,475 [Worker-96: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-04-30 16:10:21,475 [Worker-96: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\INEXTURE\JspServletProject\JspServletProject\src\main\resources
+2020-04-30 16:10:21,476 [Worker-96: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-04-30 16:10:21,476 [Worker-96: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\INEXTURE\JspServletProject\JspServletProject\src\test\resources

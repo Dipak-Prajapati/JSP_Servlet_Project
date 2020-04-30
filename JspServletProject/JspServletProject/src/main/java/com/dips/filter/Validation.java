@@ -35,17 +35,10 @@ public class Validation implements Filter {
 			boolean fname = validateName(request.getParameter("fname"));
 			boolean mname = validateName(request.getParameter("fname"));
 			boolean lname = validateName(request.getParameter("lname"));
-			// boolean valid =
-			// EmailValidator.getInstance().isValid(request.getParameter("email"));
 			boolean email = validateEmail(request.getParameter("email"));
-			//boolean emailExist = validateEmailExist(request.getParameter("email"));
 			boolean dob = validateDate(request.getParameter("dob"));
 			boolean number = validateNumber(request.getParameter("m_no"));
-			/*
-			 * boolean gender = validateGender(request.getParameter("gender")); boolean
-			 * language = validateLanguage(request.getParameter("language")); boolean hobbie
-			 * = validateHobbie(request.getParameter("hobbie"));
-			 */ boolean address = validateAddress(request.getParameter("address"));
+			boolean address = validateAddress(request.getParameter("address"));
 			boolean city = validateName(request.getParameter("city"));
 			boolean state = validateName(request.getParameter("state"));
 			boolean country = validateName(request.getParameter("country"));
@@ -70,6 +63,7 @@ public class Validation implements Filter {
 				request.getRequestDispatcher("/registration.jsp").forward(request, response);
 			} else if (validateEmailExist(request.getParameter("email"),request.getParameter("register"))) {
 				session.setAttribute("email", "Email Exists Please Try Another One..!!");
+				//session.setMaxInactiveInterval(20);
 				//res.sendRedirect("registration.jsp");
 				request.getRequestDispatcher("/registration.jsp").forward(request, response);
 			} else if (dob == false) {
@@ -80,19 +74,7 @@ public class Validation implements Filter {
 				session.setAttribute("number", "please enter the proper number.. ");
 				//res.sendRedirect("registration.jsp");
 				request.getRequestDispatcher("/registration.jsp").forward(request, response);
-			} /*
-				 * else if (gender == false) { request.setAttribute("gender",
-				 * "You Must Select Your Gender.. "); //res.sendRedirect("registration.jsp");
-				 * request.getRequestDispatcher("/registration.jsp").forward(request, response);
-				 * } else if (language == false) { request.setAttribute("language",
-				 * "Please Select Atleast One Language .. ");
-				 * //res.sendRedirect("registration.jsp");
-				 * request.getRequestDispatcher("/registration.jsp").forward(request, response);
-				 * } else if (hobbie == false) { request.setAttribute("hobbie",
-				 * "Please select an option! .. "); //res.sendRedirect("registration.jsp");
-				 * request.getRequestDispatcher("/registration.jsp").forward(request, response);
-				 * }
-				 */ else if (address == false) {
+			} else if (address == false) {
 					 session.setAttribute("address", "Please Enter the Address .. ");
 				//res.sendRedirect("registration.jsp");
 				request.getRequestDispatcher("/registration.jsp").forward(request, response);
@@ -125,7 +107,7 @@ public class Validation implements Filter {
 	}
 
 	public static boolean validateName(String name) {
-		if (name == null || name.contains(" ") || !Pattern.compile("^[a-zA-Z]{3,15}$").matcher(name).find()) {
+		if (name == null || name.contains(" ") || !Pattern.compile("^[a-zA-Z]+$").matcher(name).find()) {
 			return false;
 		} else {
 			return true;
@@ -156,19 +138,6 @@ public class Validation implements Filter {
 			return true;
 		}
 	}
-
-	/*
-	 * public static boolean validateGender(String name) { if (name == null || name
-	 * != "male" || name != "female") { return false; } else { return true; } }
-	 * 
-	 * public static boolean validateLanguage(String name) { if (name == null ||
-	 * name != "gujarati" || name != "hindi" || name != "enghlish") { return false;
-	 * } else { return true; } }
-	 * 
-	 * public static boolean validateHobbie(String name) { if (name == null || name
-	 * != "CSGO" || name != "PUBG" || name != "Bollywood" || name != "Hollywood") {
-	 * return false; } else { return true; } }
-	 */
 
 	public static boolean validateAddress(String name) {
 		if (name == null) {

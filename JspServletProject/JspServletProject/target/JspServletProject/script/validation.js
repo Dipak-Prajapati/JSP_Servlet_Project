@@ -18,19 +18,19 @@ xFile = xFirst = xMiddle = xLast = xEmail = xDob = xMobile = xGender = xLanguage
 // xAddress=
 
 function validate(id) {
-	for (var count = 0; count <= id; count++) {
+	for (var count = 1; count <= id; count++) {
 
-		if (count == 0) {
+		if (count == 1) {
 
 			var fname = document.getElementById('fname').value;
 			var mname = document.getElementById('mname').value;
 			var lname = document.getElementById('lname').value;
 			var email = document.getElementById("email").value;
-			var dob =document.getElementById("dob").value;
+			var dob = document.getElementById("dob").value;
 			var contact = document.getElementById("m_no").value;
 			var password = document.getElementById("pwd").value;
-		    var cpassword =document.getElementById("cpwd").value;
-			
+			var cpassword = document.getElementById("cpwd").value;
+
 			if (fname == "") {
 				document.getElementById('sfname').innerHTML = "* Required Field!!!";
 				return false;
@@ -95,33 +95,34 @@ function validate(id) {
 		var country = document.getElementById('user_' + count + '_country').value;
 
 		if (address == "") {
-			document.getElementById('saddress'+count).innerHTML = "* Required Field!!!";
+			document.getElementById('saddress' + count).innerHTML = "* Required Field!!!";
 			return false;
 		}
 		if (address != "") {
-			document.getElementById('saddress'+count).innerHTML = "";
+			document.getElementById('saddress' + count).innerHTML = "";
 		}
 		if (city == "") {
-			document.getElementById('scity'+count).innerHTML = "* Required Field!!!";
+			document.getElementById('scity' + count).innerHTML = "* Required Field!!!";
 			return false;
 		}
 		if (city != "") {
-			document.getElementById('scity'+count).innerHTML = "";
+			document.getElementById('scity' + count).innerHTML = "";
 		}
 		if (state == "") {
-			document.getElementById('sstate'+count).innerHTML = "* Required Field!!!";
+			document.getElementById('sstate' + count).innerHTML = "* Required Field!!!";
 			return false;
 		}
 		if (state != "") {
-			document.getElementById('sstate'+count).innerHTML = "";
+			document.getElementById('sstate' + count).innerHTML = "";
 		}
 		if (country == "") {
-			document.getElementById('scountry'+count).innerHTML = "* Required Field!!!";
+			document.getElementById('scountry' + count).innerHTML = "* Required Field!!!";
 			return false;
 		}
 		if (country != "") {
-			document.getElementById('scountry'+count).innerHTML = "";
-		}	}
+			document.getElementById('scountry' + count).innerHTML = "";
+		}
+	}
 
 }
 
@@ -344,24 +345,78 @@ function inputHobbie() {
 	}
 	// validate();
 }
-// function inputaddress()
-// {
-// var paddress= document.getElementById("address_0");
-// if(paddress.value == "")
-// {
-// document.getElementById('shead').innerText = "* All Fields Are Mandatory *";
-// document.getElementById('saddress').innerText = "* Please Enter The Address
-// *";
-// xAddress=true;
-// }
-// else
-// {
-// document.getElementById('shead').innerText = " ";
-// document.getElementById('saddress').innerText = " ";
-// xAddress=true;
-// }
-// validate();
-// }
+function inputaddress(count) {
+	var paddress = document.getElementById('user_' + count + '_address');
+	if (paddress.value == "") {
+		document.getElementById('shead').innerText = "* All Fields Are Mandatory *";
+		document.getElementById('saddress' + count).innerText = "* Please Enter The Address*";
+		xAddress = true;
+	} else {
+		document.getElementById('shead').innerText = " ";
+		document.getElementById('saddress' + count).innerText = " ";
+		xAddress = true;
+	}
+	// validate();
+}
+function inputcity(count) {
+	var cityname = document.getElementById('user_' + count + '_city');
+	var alphaExp = /^[a-zA-Z]+$/;
+
+	if (cityname.value == "") {
+		document.getElementById('shead').innerText = "* All Fields Are Mandatory *";
+		document.getElementById('scity'+count).innerText = "* Enter The City Name *";
+		xMiddle = false;
+	} else if (cityname.value.match(alphaExp)) {
+		document.getElementById('shead').innerText = " ";
+		document.getElementById('scity'+count).innerText = " ";
+		xMiddle = true;
+	} else {
+		document.getElementById('shead').innerText = " ";
+		document.getElementById('scity'+count).innerText = "* For Your City Name Please Use Alphabets Only *";
+		xMiddle = false;
+	}
+	// validate();
+}
+function inputstate(count) {
+	var statename = document.getElementById('user_' + count + '_state');
+	var alphaExp = /^[a-zA-Z]+$/;
+
+	if (statename.value == "") {
+		document.getElementById('shead').innerText = "* All Fields Are Mandatory *";
+		document.getElementById('sstate'+count).innerText = "* Enter The State Name *";
+		xMiddle = false;
+	} else if (statename.value.match(alphaExp)) {
+		document.getElementById('shead').innerText = " ";
+		document.getElementById('sstate'+count).innerText = " ";
+		xMiddle = true;
+	} else {
+		document.getElementById('shead').innerText = " ";
+		document.getElementById('sstate'+count).innerText = "* For Your State Name Please Use Alphabets Only *";
+		xMiddle = false;
+	}
+	// validate();
+}
+function inputcountry(count) {
+	var countryname = document.getElementById('user_' + count + '_country');
+	var alphaExp = /^[a-zA-Z]+$/;
+
+	if (countryname.value == "") {
+		document.getElementById('shead').innerText = "* All Fields Are Mandatory *";
+		document.getElementById('scountry'+count).innerText = "* Enter The Country Name *";
+		xMiddle = false;
+	} else if (countryname.value.match(alphaExp)) {
+		document.getElementById('shead').innerText = " ";
+		document.getElementById('scountry'+count).innerText = " ";
+		xMiddle = true;
+	} else {
+		document.getElementById('shead').innerText = " ";
+		document.getElementById('scountry'+count).innerText = "* For Your Country Name Please Use Alphabets Only *";
+		xMiddle = false;
+	}
+	// validate();
+}
+
+
 function inputpassword() { /* "^([a-zA-Z0-9@*#]{8,15})$" */
 	var pwdExp = /^[a-zA-Z0-9]{8,16}$/;
 	var password1 = document.getElementById("pwd");
@@ -431,10 +486,18 @@ function resetLanguage() {
 function resetHobbie() {
 	document.getElementById('shobbie').innerText = " ";
 }
-// function resetAddress()
-// {
-// document.getElementById('saddress').innerText = " ";
-// }
+function resetAddress(count) {
+	document.getElementById('saddress'+count).innerText = " ";
+}
+function resetCity(count) {
+	document.getElementById('scity'+count).innerText = " ";
+}
+function resetState(count) {
+	document.getElementById('sstate'+count).innerText = " ";
+}
+function resetCountry(count) {
+	document.getElementById('scountry'+count).innerText = " ";
+}
 function resetPassword() {
 	document.getElementById('spwd').innerText = " ";
 }
