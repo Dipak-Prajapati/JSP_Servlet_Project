@@ -33,14 +33,6 @@ public class UserDaoImpl implements UserDao {
 		}
 	}
 
-	/*
-	 * @Override public void connect() { // TODO Auto-generated method stub try {
-	 * con=dbInstance.Connect("jspservlet");
-	 * System.out.println("Database name passed" + con); } catch
-	 * (ClassNotFoundException | SQLException e) {
-	 * System.out.println("\n Failed To Connnect DB " + e ); } }
-	 */
-
 	@Override
 	public boolean addUser(UserModel registerPojo) {
 		// TODO Auto-generated method stub
@@ -52,7 +44,7 @@ public class UserDaoImpl implements UserDao {
 
 			System.out.println(registerPojo.getDob());
 			String query = "insert into user(firstname, middlename, lastname, email, dob, mobile_no, gender, language, hobbie, password,profile_pic) values(?,?,?,?,?,?,?,?,?,?,?)";
-			ps = con.prepareStatement(query); // preparedStatement =
+			ps = con.prepareStatement(query); 
 			con.prepareStatement(query);
 			ps.setString(1, registerPojo.getFirstName());
 			ps.setString(2, registerPojo.getMiddleName());
@@ -102,7 +94,6 @@ public class UserDaoImpl implements UserDao {
 
 				userModel.setEmail(result.getString("email"));
 				Date date = result.getDate("dob");
-				// Date date = Calendar.getInstance().getTime();
 				DateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy");
 				String strDate = dateFormat.format(date);
 				userModel.setDob(strDate);
@@ -130,8 +121,6 @@ public class UserDaoImpl implements UserDao {
 		System.out.println("In DaoRegister Class in updateData()");
 
 		try {
-
-			System.out.println(updatePojo.getDob());
 			String query = "update user set firstname=?, middlename=?, lastname=?, email=?, dob=?, mobile_no=?, gender=?, language=?, hobbie=?, password=?, profile_pic=? where user_id=?";
 			ps = con.prepareStatement(query);
 			System.out.println("Update ps" + ps);
@@ -246,7 +235,6 @@ public class UserDaoImpl implements UserDao {
 				userModel.setHiobbie(result.getString("hobbie"));
 				userModel.setPassword(result.getString("password"));
 				userModel.setImage(result.getString("profile_pic"));
-				// profile_pic
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block

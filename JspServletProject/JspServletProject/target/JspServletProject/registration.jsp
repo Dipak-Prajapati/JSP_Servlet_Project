@@ -8,22 +8,10 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 
-<%-- <c:if test="${sessionScope.currentUser == null}">
-	<c:redirect url="login.jsp"></c:redirect>
-</c:if>
- --%>
-
-
 <c:set var="user" value="${sessionScope.currentUser}" />
 <c:set var="userAddress" value="${sessionScope.currentAddress}" />
 <c:set var="role" value="${sessionScope.role}" />
-<!-- prevent browser back button after session expires -->
-<%-- <%
-	//response.setHeader("Cache-Control", "no-cache");
-	response.setHeader("Cache-Control", "no-store");
-	response.setHeader("Pragma", "no-cache");
-	response.setDateHeader("Expires", 0);
-%>	 --%>
+
 <script type="text/javascript">
 	function preventBack() {
 		window.history.forward();
@@ -184,37 +172,6 @@
 								</select><br> <span class="error" id="shobbie"></span>
 							</div>
 
-							<!-- <div class="form-group">
-								<label for="address">Address : </label>
-								<textarea class="form-control"
-									placeholder="10/4 mahashakti nagar society" name="address"
-									id="address" onblur="inputaddress()" onfocus="resetAddress()"></textarea>
-								<br> <span class="error" id="saddress"></span>
-							</div> -->
-
-							<!-- <div id="example1" class="form-group container">
-								<div class="r-group">
-									<p>
-										<label for="address_0_0" data-pattern-text="Address +=1:">Address
-											1:</label>
-										<input type="text" name="address" id="address_0"
-											class="form-control" data-pattern-name="address"
-											data-pattern-id="address_++"/>
-									</p>
-									<br> <span class="error" id="saddress"></span>
-									<p>
-										Add a remove button for the item. If one didn't exist, it would be added to overall group
-										<button type="button"
-											class="r-btnRemove btn btn-outline-dark btn-danger btn-lg">
-											Remove<span class="fa fa-minus-circle ml-2"></span>
-										</button>
-									</p>
-								</div>
-								<button type="button"
-									class="btn btn-outline-dark btn-lg r-btnAdd btn-success">
-									Add<span class="fa fa-plus-circle ml-2"></span>
-								</button>
-							</div> -->
 
 							<c:if test="${sessionScope.currentUser == null}">
 
@@ -265,7 +222,6 @@
 										<input type="hidden" id="custId" name="addID" value="555">
 										<input type="hidden" name="id" value="${user.id}">
 										<input type="hidden" id="count" value="${count}">
-										<%-- <c:set var="count" value="${count+1}" scope="page" /> --%>
 										
 									</div>
 								</div>
@@ -282,12 +238,7 @@
 										</button>
 									</div>
 
-
-									
-									<%-- ${userAddress} --%>
-
 									<c:forEach var="list" items="${userAddress}">
-										<%-- <c:if test="${fn:length(list) gt 0}"> --%>
 
 										<div class="r-group" id="repeater">
 
@@ -297,7 +248,6 @@
 												data-pattern-id="user_++_address" name="address"
 												value="${list[0]}" onblur="inputaddress(${count})" onfocus="resetAddress(${count})"/>
 												<br> <span class="error" id="saddress${count}">${sessionScope.address}</span>
-											<!-- </textarea> -->
 
 											<div class="row">
 												<div class="col-md-6">

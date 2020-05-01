@@ -17,6 +17,9 @@ var xFile, xFirst, xMiddle, xLast, xEmail, xDob, xMobile, xGender, xLanguage, xH
 xFile = xFirst = xMiddle = xLast = xEmail = xDob = xMobile = xGender = xLanguage = xHobbie = xPassword = xCPassword = false;
 // xAddress=
 
+/*$('form').data('validator', null);
+$.validator.unobtrusive.parse($('form'));
+*/
 function validate() {
 	//var id = document.getElementById('count').value;
 	/*var location = $( "#repeater" ).last();

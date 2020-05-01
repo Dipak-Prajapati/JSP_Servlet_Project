@@ -14,9 +14,6 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public boolean insertData(UserModel registerPojo) {
 		// TODO Auto-generated method stub
-		System.out.println("In ServiceRegister Class");
-		System.out.println("serviceRegisterImpl registerPojo :" + registerPojo);
-		/* registerPojo = new RegisterPojo(); */
 		boolean status = daoRegister.addUser(registerPojo);
 		return status;
 	}

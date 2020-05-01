@@ -10,7 +10,6 @@ import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.dips.service.UserService;
@@ -28,7 +27,6 @@ public class Validation implements Filter {
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
 			throws IOException, ServletException {
 		// TODO Auto-generated method stub
-		HttpServletResponse res = (HttpServletResponse) response; 
 		HttpServletRequest req = (HttpServletRequest) request;
 		HttpSession session = req.getSession();
 		if (request.getParameter("register").equals("SignUp") || request.getParameter("register").equals("Update")) {
@@ -48,62 +46,46 @@ public class Validation implements Filter {
 			if (fname == false) {
 				session.setAttribute("fname", "please enter the proper fisrt name");
 				request.getRequestDispatcher("/registration.jsp").forward(request, response);
-				//res.sendRedirect("registration.jsp");
 			} else if (mname == false) {
 				session.setAttribute("mname", "please enter the proper middle name ");
 				request.getRequestDispatcher("/registration.jsp").forward(request, response);
-				 //res.sendRedirect("registration.jsp");
 			} else if (lname == false) {
 				session.setAttribute("lname", "please enter the proper last name ");
 				request.getRequestDispatcher("/registration.jsp").forward(request, response);
-				// res.sendRedirect("registration.jsp");
 			} else if (email == false) {
 				session.setAttribute("email", "please enter correct email id.");
-				// res.sendRedirect("registration.jsp");
 				request.getRequestDispatcher("/registration.jsp").forward(request, response);
-			} else if (validateEmailExist(request.getParameter("email"),request.getParameter("register"))) {
+			} else if (validateEmailExist(request.getParameter("email"), request.getParameter("register"))) {
 				session.setAttribute("email", "Email Exists Please Try Another One..!!");
-				//session.setMaxInactiveInterval(20);
-				//res.sendRedirect("registration.jsp");
 				request.getRequestDispatcher("/registration.jsp").forward(request, response);
 			} else if (dob == false) {
 				session.setAttribute("dob", "please enter proper date.");
-				//res.sendRedirect("registration.jsp");
 				request.getRequestDispatcher("/registration.jsp").forward(request, response);
 			} else if (number == false) {
 				session.setAttribute("number", "please enter the proper number.. ");
-				//res.sendRedirect("registration.jsp");
 				request.getRequestDispatcher("/registration.jsp").forward(request, response);
 			} else if (address == false) {
-					 session.setAttribute("address", "Please Enter the Address .. ");
-				//res.sendRedirect("registration.jsp");
+				session.setAttribute("address", "Please Enter the Address .. ");
 				request.getRequestDispatcher("/registration.jsp").forward(request, response);
 			} else if (city == false) {
 				session.setAttribute("city", "Please Enter the proper city name .. ");
-				// res.sendRedirect("registration.jsp");
 				request.getRequestDispatcher("/registration.jsp").forward(request, response);
 			} else if (state == false) {
 				session.setAttribute("state", "please Enter The proper state name...");
-				// res.sendRedirect("registration.jsp");
 				request.getRequestDispatcher("/registration.jsp").forward(request, response);
 			} else if (country == false) {
 				session.setAttribute("country", "please enter the proper country name...");
-				//res.sendRedirect("registration.jsp");
 				request.getRequestDispatcher("/registration.jsp").forward(request, response);
 			} else if (password == false) {
 				session.setAttribute("password", "Please enter minimum 8 character of password ");
-				//res.sendRedirect("registration.jsp");
 				request.getRequestDispatcher("/registration.jsp").forward(request, response);
 			} else if (cpassword == false) {
 				session.setAttribute("cpassword", "passsword does not match.");
-				//res.sendRedirect("registration.jsp");
 				request.getRequestDispatcher("/registration.jsp").forward(request, response);
 			} else {
 				chain.doFilter(request, response);
 			}
-		} /*
-			 * else { chain.doFilter(request, response); }
-			 */
+		} 
 	}
 
 	public static boolean validateName(String name) {
@@ -163,15 +145,16 @@ public class Validation implements Filter {
 			return false;
 		}
 	}
-	public static Boolean validateEmailExist(String email , String Op) {
-		
+
+	public static Boolean validateEmailExist(String email, String Op) {
+
 		UserService userService = new UserServiceImpl();
-		
+
 		if (userService.emailExist(email) && (!Op.equals("Update"))) {
 			return true;
-		} 
+		}
 		return false;
-		
+
 	}
 
 	@Override

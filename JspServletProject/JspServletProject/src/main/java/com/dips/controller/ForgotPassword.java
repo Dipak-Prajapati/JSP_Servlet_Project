@@ -20,10 +20,6 @@ public class ForgotPassword extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("OUT forgot Password");
-
-		System.out.println("IN forgot Password");
-
 		UserService serviceRegister = new UserServiceImpl();
 		String password = serviceRegister.findPassword(request.getParameter("userEmail"));
 

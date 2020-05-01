@@ -13,8 +13,6 @@ import com.dips.pojo.UserModel;
  */
 public interface UserDao {
 	
-	//public void connect();
-	
 	public boolean addUser(UserModel registerPojo);
 	
 	public UserModel login(String email , String password);

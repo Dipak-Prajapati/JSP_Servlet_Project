@@ -99,7 +99,6 @@ public class RegisterController extends HttpServlet {
 			String imageName;
 			if (immm == null) {
 				imageName = "profileAvatar.jpeg";
-				// imageName = "profile.jpg";
 			} else {
 
 				Part part = request.getPart("pic");
@@ -115,7 +114,6 @@ public class RegisterController extends HttpServlet {
 				String path = "D:\\INEXTURE\\JspServletProject\\JspServletProject\\src\\main\\webapp\\image"
 						+ File.separator + imageName;
 
-				// String path = "D:\\Upload Image" + File.separator + imageName;
 				String path1 = request.getRealPath("/") + "image" + File.separator + imageName;
 				System.out.println("imagePath :" + path);
 				System.out.println("Get Real Path imagePath :" + path1);
@@ -143,29 +141,12 @@ public class RegisterController extends HttpServlet {
 			registerPojo.setHiobbie(hobbie);
 			registerPojo.setPassword(password);
 			registerPojo.setImage(imageName);
-			// .setAddress(address);
+			
 			addressPojo.setEmail(email);
 			addressPojo.setAddress(address);
 			addressPojo.setCity(city);
 			addressPojo.setState(state);
 			addressPojo.setCountry(country);
-
-			System.out.println("In Controller");
-			System.out.println(fname);
-			System.out.println(mname);
-			System.out.println(lname);
-			System.out.println(email);
-			System.out.println(dob);
-			System.out.println(mobileNo);
-			System.out.println(gender);
-			System.out.println(language);
-			System.out.println(hobbie);
-			System.out.println(password);
-			// System.out.println(address);
-			/*
-			 * System.out.println(address[0]); System.out.println(city[0]);
-			 * System.out.println(state[0]); System.out.println(country[0]);
-			 */
 
 			serviceRegister = new UserServiceImpl();
 			addressService = new AddressServiceImpl();
@@ -178,7 +159,6 @@ public class RegisterController extends HttpServlet {
 
 			response.sendRedirect("index.jsp");
 		}
-		// if (session.getAttribute("currentUser") != null) {
 		else if (request.getParameter("register").equals("Update")) {
 			System.out.println("session.getAttribute(\"currentUser\") != null update Profile");
 			String fname = request.getParameter("fname");
@@ -203,24 +183,11 @@ public class RegisterController extends HttpServlet {
 			for (int i = 0; i < addID.length; i++) {
 				System.out.println("addID " + i + " : " + addID[i]);
 
-				// int intId = Integer.parseInt(addID[i]);
-				// System.out.println("intId " + i + ":" + intId);
 				addressId[i] = Integer.parseInt(addID[i]);
 				System.out.println("AddressId" + i + ":" + addressId[i]);
 
 			}
 
-			/*
-			 * String[] buttonValue = request.getParameterValues("buttonId");
-			 * System.out.println("buttonValue:"+buttonValue); int[] buttonValueId = new
-			 * int[buttonValue.length]; for (int i = 0; i < buttonValueId.length; i++) {
-			 * System.out.println("buttonValueId " + i + " : " + buttonValue[i]);
-			 * 
-			 * buttonValueId[i] = Integer.parseInt(buttonValue[i]);
-			 * System.out.println("AddressId" + i + ":" + buttonValueId[i]);
-			 * 
-			 * }
-			 */
 			String password = request.getParameter("pwd");
 
 			String imageName;
@@ -242,7 +209,6 @@ public class RegisterController extends HttpServlet {
 				String path = "D:\\INEXTURE\\JspServletProject\\JspServletProject\\src\\main\\webapp\\image"
 						+ File.separator + imageName;
 
-				// String path = "D:\\Upload Image" + File.separator + imageName;
 				String path1 = request.getRealPath("/") + "image" + File.separator + imageName;
 				System.out.println("imagePath :" + path);
 				System.out.println("Get Real Path imagePath :" + path1);
@@ -265,9 +231,7 @@ public class RegisterController extends HttpServlet {
 			addressPojo.setCountry(country);
 			addressPojo.setAddressId(addressId);
 			addressPojo.setId(userID);
-			// addressPojo.setButtonvalue(buttonValueId);
 
-			// addressPojo.setAddressId(request.getParameterValues("addID"));
 			System.out.println("Update AddressPojo :" + addressPojo);
 
 			registerPojo.setFirstName(fname);
@@ -281,18 +245,6 @@ public class RegisterController extends HttpServlet {
 			registerPojo.setHiobbie(hobbie);
 			registerPojo.setPassword(password);
 			registerPojo.setImage(imageName);
-
-			System.out.println("In Update Controller ");
-			System.out.println(fname);
-			System.out.println(mname);
-			System.out.println(lname);
-			System.out.println(email);
-			System.out.println(dob);
-			System.out.println(mobileNo);
-			System.out.println(gender);
-			System.out.println(language);
-			System.out.println(hobbie);
-			System.out.println(password);
 
 			serviceRegister = new UserServiceImpl();
 			addressService = new AddressServiceImpl();

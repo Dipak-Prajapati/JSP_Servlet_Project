@@ -7,7 +7,6 @@
 <%@ include file="header.jsp"%>
 
 <%
-	//response.setHeader("Cache-Control", "no-cache");
 response.setHeader("Cache-Control", "no-store");
 response.setHeader("Pragma", "no-cache");
 response.setDateHeader("Expires", 0);
@@ -40,9 +39,6 @@ response.setDateHeader("Expires", 0);
 								</a>
 							</div>
 						</div>
-						<!-- <p class="display-3 mt-5">Welcome To AdminPanel</p>
-									<a class="btn btn-outline-light btn-lg login-bg"
-										href="LogoutController"><span class="fa fa-sign-out"></span>Logout</a> -->
 					</div>
 
 					<div class="card-body">
@@ -121,10 +117,6 @@ response.setDateHeader("Expires", 0);
 <!-- User-->
 <c:if test="${sessionScope.role == 'user' }">
 
-	<!-- validate session -->
-	<%-- <c:if test="${sessionScope.currentUser == null}">
-		<c:redirect url="login.jsp"></c:redirect>
-	</c:if> --%>
 	<c:set var="user" value="${sessionScope.currentUser}" />
 	<c:set var="userAddress" value="${sessionScope.currentAddress}" />
 
@@ -133,10 +125,6 @@ response.setDateHeader("Expires", 0);
 			<div class="row">
 				<div class="col-md-4 offset-md-3">
 					<div class="card reg-top">
-						<!-- <div class="card-header login-bg text-white text-center">
-							<br> <span class="fa fa-vcard fa-3x"></span> <br>
-							<h3 class="display-5">TESTING PROFILE PAGE</h3>
-						</div> -->
 						<div class="card-header login-bg ">
 							<h3 class="display-5 text-white text-center">PROFILE PAGE</h3>
 							<div class="d-flex justify-content-center h-100">
@@ -144,9 +132,6 @@ response.setDateHeader("Expires", 0);
 									<div class="green_icon"></div>
 									<div class="image_inner_container">
 										<img src="image/${user.image}" class="img-fluid">
-
-
-										<!-- https://bootsnipp.com/snippets/gN2b5 -->
 									</div>
 								</div>
 							</div>

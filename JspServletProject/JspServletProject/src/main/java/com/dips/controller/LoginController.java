@@ -24,17 +24,11 @@ public class LoginController extends HttpServlet {
 	 */
 	private static final long serialVersionUID = 1L;
 
-	@SuppressWarnings("unused")
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
 		String email = request.getParameter("email");
 		String password = request.getParameter("pwd");
 		HttpSession session = request.getSession();
 		
-		/*
-		 * UserModel userModel = new UserModel();
-		 * 
-		 * userModel.setEmail(email); userModel.setPassword(password);
-		 */
 		if (email.equals("admin@gmail.com") && password.equals("aaaaaaaa")) {
 			
 			UserModel userModel = new UserModel();
@@ -54,10 +48,6 @@ public class LoginController extends HttpServlet {
 			if (userModel == null) {
 				Message msg = new Message("Invalid Details ! try with another", "error", "alert-danger");
 				session.setAttribute("Msg", msg);
-				/*
-				 * RequestDispatcher rd = request.getRequestDispatcher("login.jsp");
-				 * rd.forward(request, response);
-				 */
 				response.sendRedirect("login.jsp");
 			} else {
 				session.setAttribute("role", "user");
@@ -68,10 +58,6 @@ public class LoginController extends HttpServlet {
 				addressPojo = addressService.login(userModel.getId());
 
 				session.setAttribute("currentAddress", addressPojo);
-				/*
-				 * RequestDispatcher rd = request.getRequestDispatcher("profile.jsp");
-				 * rd.forward(request, response);
-				 */
 				response.sendRedirect("profile.jsp");
 			}
 		}
